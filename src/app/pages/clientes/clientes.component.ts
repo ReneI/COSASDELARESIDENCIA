@@ -1,3 +1,4 @@
+import { Clientes } from './../../models/clientes.model';
 import { ClientesService } from './../../services/service.index';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,23 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
-  rows = [
-    { name: 'Austin', gender: 'Male', company: 'Swimlane' },
-    { name: 'Dany', gender: 'Male', company: 'KFC' },
-    { name: 'Molly', gender: 'Female', company: 'Burger King' },
-  ];
-  columns = [
-    { prop: 'name' },
-    { name: 'Gender' },
-    { name: 'Company' }
-  ];
+
+  loadingIndicator: boolean = true;
+  reorderable: boolean = true;
+  
+
+  public clientes;
 
 
-  constructor() {
+
+  constructor(public obtener: ClientesService) {
 
    }
+   listadoClientes(){
+    this.obtener.getAllClientes().subscribe( (ok) => { this.clientes = ok;console.log(ok);
 
+    });
+
+   }
   ngOnInit() {
+    this.listadoClientes();
+    console.log(this.clientes);
   }
 
 }

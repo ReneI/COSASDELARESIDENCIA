@@ -11,13 +11,14 @@ import {PagesComponent} from './pages.component';
 import {PerfilComponent} from './perfil/perfil.component';
 import {ClientesComponent} from './clientes/clientes.component';
 import {ClienteNuevoComponent} from './clientes/nuevo/clientenuevo.component';
+import { GuardGuard } from '../services/guard/guard.guard';
 
 const pagesroutes: Routes = [
   {
     path: '',
     component: PagesComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Panel administrativo'} },
+      { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Panel administrativo'}, canActivate: [GuardGuard] },
       { path: 'progress', component: ProgressComponent, data :  { titulo: 'Panel administrativo'} },
       { path: 'graficas1', component: Graficas1Component, data :  { titulo: 'Panel administrativo'} },
       { path: 'manual',  component: DocumentacionComponent, data :  { titulo: 'Manual de Uso'} },

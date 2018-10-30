@@ -28,7 +28,6 @@ import { ClientesComponent} from './clientes/clientes.component';
 import { ClienteNuevoComponent } from './clientes/nuevo/clientenuevo.component';
 import { NgxDatatableModule } from '@sercanuste/ngx-datatable';
 
-
 @NgModule({
 
   declarations: [

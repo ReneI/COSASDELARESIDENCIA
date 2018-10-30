@@ -4,7 +4,8 @@ export class Clientes  {
   
         public nombre,
         public empresa,
-        public  posicion?,
+        public correo?,
+        public  cargo?,
         public telefono?,
         public celular?,
         public direccion?,

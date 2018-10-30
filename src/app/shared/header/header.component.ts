@@ -9,9 +9,12 @@ import {AuthService, NavbarService} from '../../services/service.index';
 })
 export class HeaderComponent implements OnInit {
 
+   public islogin: boolean = false;
   constructor(private  router: Router, private menu: NavbarService, private login: AuthService) { }
 
-  ngOnInit() {
+  ngOnInit(  ) {
+    this.checkuser();
+      
   }
       salir(): void {
         // this.router.navigate(['/login']);
@@ -20,5 +23,14 @@ export class HeaderComponent implements OnInit {
         }, error => { console.log(error);} );
       console.log('cerrado');
 }
+checkuser():void{
 
+  if(this.login.getUser() === null){
+   this.islogin = false;
+} else {
+this.islogin = true;
+}
+
+
+}
 }

@@ -48,7 +48,7 @@
 .cards .info {
     position: relative;
     visibility: hidden;
-    top: -50%;
+    top: 0;
     opacity: 0;
 }
 

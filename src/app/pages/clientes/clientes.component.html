@@ -2,25 +2,7 @@
 
 
 <div>
+    <ngx-datatable class="material" [columnMode]="'force'" [loadingIndicator]="loadingIndicator" [rows]="clientes" [columns]="[{name:'nombre'},{name:'empresa'},{name:'telefono'}]" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'">
 
-    <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'name', dir: 'desc'}]">
-        <ngx-datatable-column name="Empresa">
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.company}}
-            </ng-template>
-        </ngx-datatable-column>
-        <ngx-datatable-column name="Nombre">
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                {{row.name}}
-            </ng-template>
-        </ngx-datatable-column>
-        <ngx-datatable-column name="Telefono">
-        </ngx-datatable-column>
-        <ngx-datatable-column name="acciones">
-            <ng-template let-row="row" ngx-datatable-cell-template>
-                <button type="button" class="btn btn-primary btn-sm">Ver</button>
-                <button type="button" class="btn btn-secondary btn-sm">eliminar</button>
-            </ng-template>
-        </ngx-datatable-column>
     </ngx-datatable>
 </div>
