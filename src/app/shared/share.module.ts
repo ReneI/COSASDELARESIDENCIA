@@ -6,6 +6,8 @@ import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {NopagefoundComponent} from './nopagefound/nopagefound.component';
 import {APP_ROUTES} from '../app.routes';
+import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {APP_ROUTES} from '../app.routes';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTES
+    APP_ROUTES,
+    RouterModule,
+    CommonModule
 
 
   ],

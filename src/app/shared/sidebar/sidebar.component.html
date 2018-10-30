@@ -7,34 +7,54 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="user-profile">
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">Juan Pedro </span></a>
+
+
+                <!--  <li *ngFor="let inicio of _sidebar.menuCuenta" class="user-profile">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">{{inicio.usuario}} </span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="javascript:void()">Mi cuenta </a></li>
-                        <li><a href="javascript:void()">Configuracion Administrativa</a></li>
+                        <li *ngFor=""><a href="javascript:void()">Mi cuenta </a></li>
+                        <li>
+                            <a href="javascript:void()"></a>
+                        </li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Parametros de </a></li>
-                        <li><a href="javascript:void()">Salir</a></li>
+                        <li>
+                            <a href="javascript:void()"></a>
+                        </li>
+                        <li><a>Salir</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
+
+                <!--Ciclo for con angular -->
+                <li *ngFor="let i of _sidebar.menuEmpleados "> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">{{ i.titulo }} <span class="label label-rouded label-themecolor pull-right">{{i.submenu.length}}</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
-                        <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+                        <li *ngFor="let m of i.submenu">
+                            <a routerLinkActive="active" [routerLink]="[m.url] "> {{m.titulo}} </a></li>
+                    </ul>
+
+                    <ul aria-expanded="false" class="collapse">
+                        <li *ngFor="let m of i.empleados">
+                            <a routerLinkActive="active" [routerLink]="[m.url] "> {{m.nombre}} </a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Clientes <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
+
+                <li *ngFor="let i of _sidebar.Reportes "> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">{{ i.titulo }} <span class="label label-rouded label-themecolor pull-right">{{i.submenu.length}}</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
-                        <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+                        <li *ngFor="let m of i.submenu">
+                            <a routerLinkActive="active" [routerLink]="[m.url] "> {{m.titulo}} </a></li>
                     </ul>
+
                 </li>
+
+                <li *ngFor="let i of _sidebar.Clientes "> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">{{ i.titulo }} <span class="label label-rouded label-themecolor pull-right">{{i.submenu.length}}</span></span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li *ngFor="let m of i.submenu">
+                            <a routerLinkActive="active" [routerLink]="[m.url] "> {{m.titulo}} </a></li>
+                    </ul>
+
+                </li>
+
 
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Encuestas <span class="label label-rouded label-themecolor pull-right">200</span></span></a>
                     <ul aria-expanded="false" class="collapse">
@@ -45,14 +65,7 @@
                     </ul>
                 </li>
 
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Seguimiento de reportes <span class="label label-rouded label-themecolor pull-right">200</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
 
-                        <li><a href="index.html">Reportes semanales <span class="label label-rouded label-themecolor pull-right">200</span> </a></li>
-                        <li><a href="index.html">Historico de reportes </a></li>
-
-                    </ul>
-                </li>
 
 
 

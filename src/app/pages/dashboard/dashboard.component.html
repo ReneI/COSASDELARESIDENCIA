@@ -1,23 +1,68 @@
+
 <div class="row">
-    <div class="carousel-item">
-      <img src="la.jpg" alt="Los Angeles">
-      <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>We had such a great time in LA!</p>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-grafico-dona ></app-grafico-dona>
       </div>
     </div>
   </div>
-<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
 
-  <div class="col-sm-4">
-    <h3>Column 2</h3>
-    <p>Lorem ipsum dolor..</p>
-    <p>Ut enim ad..</p>
+        <app-grafico-dona [leyenda]="graficos.grafico1.leyenda" [doughnutChartType]="graficos.grafico1.type" [doughnutChartData]="graficos.grafico1.data" [doughnutChartLabels]="graficos.grafico1.labels"></app-grafico-dona>
+
+      </div>
+
+    </div>
+
   </div>
-  <div class="col-sm-4">
-    <h3>Column 3</h3>
-    <p>Lorem ipsum dolor..</p>
-    <p>Ut enim ad..</p>
-  </div>
+
 </div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <h5>Clima</h5>
+
+
+    </div>
+
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <h1>mensajes</h1>
+      <h1>mensajes</h1>
+
+
+    </div>
+
+  </div>
+      <div class="col-md-4 col-sm-4 col-xs-5">
+        <h2>Mis Apuntes</h2>
+        <form method="post">
+          <div class="form-group ">
+            <label class="control-label " for="name">
+              Nombre de la nota
+            </label>
+            <input class="form-control" id="name" name="name" type="text"/>
+          </div>
+          <div class="form-group ">
+            <label class="control-label " for="message">
+              Nota
+            </label>
+            <textarea class="form-control" cols="20" id="message" name="message" rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <div>
+              <button class="btn btn-primary " name="submit" type="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
 

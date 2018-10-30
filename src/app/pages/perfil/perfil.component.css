@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  padding: 1.5rem;
+  margin: 0;
+}
+input[type="text"] {
+  font-family: inherit;
+  font-size: inherit;
+}
+a {
+  text-decoration: none;
+  color: #428bca;
+  border-bottom: dashed 1px #428bca;
+  cursor: pointer;
+  line-height: 2;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.inlineEditForm{
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+}
+#inlineEditWrapper{
+  display: inline-block;
+}
+.inlineEditForm input, select{
+  width: auto;
+  display: inline;
+}
+.editInvalid{
+  color: #a94442;
+  margin-bottom: 0;
+}
+.error{
+  border-color: #a94442;
+}
+[hidden] {
+  display: none;
+}

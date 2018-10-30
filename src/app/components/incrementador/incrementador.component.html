@@ -1,0 +1,12 @@
+
+<div class="input-group mb-3">
+  <h3>
+    {{ leyenda }}</h3>
+  <div class="input-group-prepend">
+    <button (click)="incrementar(-5)" class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+
+  <input type="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="porcentaje"  [(ngModel)]="porcentaje" (ngModelChange)="Onchanges($event)" [placeholder]="porcentaje">
+  <button (click)="incrementar(5)" class="btn btn-outline-secondary" type="button">Button</button>
+
+</div>

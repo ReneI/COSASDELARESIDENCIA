@@ -59,7 +59,8 @@
   width: 50%;
   content: "";
   height: 100%;
-  background: rgba(255, 99, 71, 0.95);
+  background: rgba(110, 255, 109, 0.95);
+  opacity: 0.6;
 }
 .l-screen:before {
   left: 0;
@@ -248,4 +249,8 @@
     margin-left: -190px;
     text-align: center;
   }
+}
+
+#themecolors a{
+  cursor: pointer;
 }

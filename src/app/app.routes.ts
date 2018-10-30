@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegisterComponent }
   //  { path: '**', component: NopagefoundComponent }
-  //{ path: '', component: NopagefoundComponent }
+  //  { path: '', component: NopagefoundComponent }
 ];
 
 
