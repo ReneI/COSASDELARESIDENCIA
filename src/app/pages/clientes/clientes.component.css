@@ -1,0 +1,11 @@
+page-table .male-row {
+    background-color: green !important;
+}
+
+page-table .female-row {
+    background-color: red !important;
+}
+
+table {
+    width: 100%;
+}

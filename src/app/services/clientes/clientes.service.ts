@@ -32,4 +32,10 @@ return this.http.post(url, Usuario, {headers: this.headers}).map( ma => {
     return this.http.get(url);
 
    }
+   deleteClientes(){
+
+   }
+   updateClientes(){
+     
+   }
 }

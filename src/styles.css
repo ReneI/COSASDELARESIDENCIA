@@ -254,3 +254,9 @@
 #themecolors a{
   cursor: pointer;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }

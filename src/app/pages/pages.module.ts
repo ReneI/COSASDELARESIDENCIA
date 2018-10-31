@@ -26,8 +26,10 @@ import {InlineEditorModule} from '@qontu/ngx-inline-editor';
 import { DetalleComponent } from './clientes/detalle/detalle.component';
 import { ClientesComponent} from './clientes/clientes.component';
 import { ClienteNuevoComponent } from './clientes/nuevo/clientenuevo.component';
-import { NgxDatatableModule } from '@sercanuste/ngx-datatable';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { DataTableComponent } from '../data-table/data-table.component';
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
 
   declarations: [
@@ -47,7 +49,9 @@ import { NgxDatatableModule } from '@sercanuste/ngx-datatable';
     PerfilComponent,
     DetalleComponent,
     ClientesComponent,
-    ClienteNuevoComponent
+    ClienteNuevoComponent,
+    DataTableComponent
+
   ],
   exports: [
     DashboardComponent,
@@ -64,7 +68,11 @@ import { NgxDatatableModule } from '@sercanuste/ngx-datatable';
     AngularFirestoreModule,
     ReactiveFormsModule,
     InlineEditorModule,
-    NgxDatatableModule
+NgxSpinnerModule,
+LayoutModule,
+MatTableModule,
+MatPaginatorModule,
+MatSortModule
 
   ]
 

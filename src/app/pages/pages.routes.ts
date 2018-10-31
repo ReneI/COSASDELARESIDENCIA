@@ -24,6 +24,13 @@ const pagesroutes: Routes = [
       { path: 'manual',  component: DocumentacionComponent, data :  { titulo: 'Manual de Uso'} },
       {path: 'reportes', component: ReportesComponent, data :  { titulo: 'Reportes'}},
       { path: 'encuestas',  component: EncuestasComponent, data :  { titulo: 'Panel administrativo'} },
+      { path: 'encuesta/:id', component: EncuestasComponent,
+      children: [
+      { path: '', redirectTo: 'encuestas', pathMatch: 'full' },
+      { path: 'preguntas', component: EncuestasComponent },
+      { path: 'estadisticas', component: EncuestasComponent }
+      ]
+    },
       { path: 'estilo', component: AccoutSettingsComponent, data :  { titulo: 'Configuracion'} },
       { path: 'perfil', component: PerfilComponent, data :  { titulo: 'Perfil'} },
       { path: 'clientes',  component: ClientesComponent, data :  { titulo: 'Clientes'}},

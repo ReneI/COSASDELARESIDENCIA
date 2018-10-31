@@ -33,7 +33,11 @@ return this.http.post(url, Usuario);
   }
   updateUsuario(Usuario) {
     console.log(this.obj)
-    const url = `${URL_RAIZ}/api/empleados/update?where=+${this.obj}&access_token=${this.auth.getToken()}`;
+  let i = {
+     id: Usuario
+
+  }
+    const url = `${URL_RAIZ}/api/empleados/update?where=${[i]}&access_token=${this.auth.getToken()}`;
 return this.http.post(url, Usuario, { headers: this.headers});
   }
 

@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 //Servicios
 import { ServiceModule } from './services/service.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,6 @@ import { ServiceModule } from './services/service.module';
     RegisterComponent,
     DocumentacionComponent,
     EncuestaComponent
-
   ],
   imports: [ SweetAlert2Module.forRoot({
     buttonsStyling: false,
@@ -36,7 +36,8 @@ import { ServiceModule } from './services/service.module';
     APP_ROUTES,
     FormsModule,
     ServiceModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
