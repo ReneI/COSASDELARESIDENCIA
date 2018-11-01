@@ -8,15 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class GuardGuard implements CanActivate {
 
-   constructor(private auth:  AuthService, private router: Router) {
+   constructor(public auth:  AuthService, public router: Router) {
 
 
    }
-  canActivate(){
-    if(this.auth.getUser){
+  canActivate() {
+    if(this.auth.getUser) {
+      console.log('si logeado');
       return true;
 
     } else {
+      console.log('no logeado');
+      
       this.router.navigate(['/login']);
       return false;
     }
