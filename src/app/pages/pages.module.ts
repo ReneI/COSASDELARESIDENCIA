@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {NgModule} from '@angular/core';
 import {AppComponent} from '../app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -11,7 +12,7 @@ import {IncrementadorComponent} from '../components/incrementador/incrementador.
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
-import { EncuestaEditorComponent } from '../components/encuesta-editor/encuesta-editor.component';
+import { SurveyEditorComponent } from '../components/encuesta-editor/encuesta-editor.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ReportesComponent } from './reportes/reportes.component';
@@ -22,14 +23,14 @@ import { environment } from '../../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {PagesComponent} from './pages.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import {InlineEditorModule} from '@qontu/ngx-inline-editor';
 import { DetalleComponent } from './clientes/detalle/detalle.component';
 import { ClientesComponent} from './clientes/clientes.component';
 import { ClienteNuevoComponent } from './clientes/nuevo/clientenuevo.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { DataTableComponent } from '../data-table/data-table.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
-import { LayoutModule } from '@angular/cdk/layout';
+import { UsuariosComponent } from './perfil/usuarios/usuarios.component';
+import {DemoMaterialModule} from './materia.module';
+import {MatNativeDateModule} from '@angular/material';
 @NgModule({
 
   declarations: [
@@ -39,7 +40,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     IncrementadorComponent,
     GraficoDonaComponent,
     AccoutSettingsComponent,
-    EncuestaEditorComponent,
+    SurveyEditorComponent,
     PromesasComponent,
     EncuestasComponent,
     ReportesComponent,
@@ -50,7 +51,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     DetalleComponent,
     ClientesComponent,
     ClienteNuevoComponent,
-    DataTableComponent
+    DataTableComponent,
+    UsuariosComponent
 
   ],
   exports: [
@@ -58,7 +60,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     ProgressComponent,
     Graficas1Component
   ],
-  imports: [
+  imports: [CommonModule,
+    MatNativeDateModule,
     ShareModule,
     APP_ROUTES,
     PAGES_ROUTE,
@@ -67,13 +70,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
-    InlineEditorModule,
 NgxSpinnerModule,
-LayoutModule,
-MatTableModule,
-MatPaginatorModule,
-MatSortModule
-
+DemoMaterialModule
   ]
 
 })

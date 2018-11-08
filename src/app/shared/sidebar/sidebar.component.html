@@ -54,16 +54,15 @@
                     </ul>
 
                 </li>
-
-
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Encuestas <span class="label label-rouded label-themecolor pull-right">200</span></span></a>
+                <li *ngFor="let i of _sidebar.Encuestas "> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">{{ i.titulo }} <span class="label label-rouded label-themecolor pull-right">{{i.submenu.length}}</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-
-                        <li><a href="index.html">Historial de encuestas <span class="label label-rouded label-themecolor pull-right">200</span> </a></li>
-                        <li><a href="index.html">Crear nueva encuesta </a></li>
-
+                        <li *ngFor="let m of i.submenu">
+                            <a routerLinkActive="active" [routerLink]="[m.url] "> {{m.titulo}} </a></li>
                     </ul>
+
                 </li>
+
+
 
 
 

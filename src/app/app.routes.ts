@@ -1,4 +1,4 @@
-import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { EncuestaPublicaComponent } from './encuesta/encuestapublica/encuesta.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GuardGuard } from './services/guard/guard.guard';
 
@@ -13,7 +13,7 @@ import { RegisterComponent } from './login/register.component';
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegisterComponent, canActivate: [GuardGuard] },
-     { path: 'encuestacalidad/:id', component: EncuestaComponent }
+     { path: 'calidad', component: EncuestaPublicaComponent }
   //  { path: '**', component: NopagefoundComponent }
   //  { path: '', component: NopagefoundComponent }
 ];

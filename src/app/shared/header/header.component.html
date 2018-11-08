@@ -120,15 +120,15 @@
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                          <!--<li *ngFor="let m of menu.menuCuenta[0].submenu"><a href="#"><i class="ti-user"></i> {{m.titulo}}</a></li>-->
+                            <!--<li *ngFor="let m of menu.menuCuenta[0].submenu"><a href="#"><i class="ti-user"></i> {{m.titulo}}</a></li>-->
 
-                          <li><a routerLink="/perfil"><i class="ti-user"></i> Mi perfil</a></li>
+                            <li><a routerLink="/perfil"><i class="ti-user"></i> Mi perfil</a></li>
                             <li><a href="#"><i class="ti-wallet"></i> Roles</a></li>
                             <li><a href="#"><i class="ti-email"></i> mensajes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#" (click)="salir()" ><i class="ti-settings"></i>Configuracion</a></li>
+                            <li><a href="#" (click)="salir()"><i class="ti-settings"></i>Configuracion</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#" (click)="salir()"><i class="fa fa-power-off"></i>Salir</a></li>
+                            <li><a (click)="salir()"><i class="fa fa-power-off"></i>Salir</a></li>
                         </ul>
                     </div>
                 </li>

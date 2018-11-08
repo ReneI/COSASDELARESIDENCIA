@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class DashboardComponent implements OnInit {
+    usuariosperfil: any = [
+     { 'usuario': 'pedro', 'correo': 'wqeq'},
+     {'usuario': 'pedro'}
 
+    ];
   graficos: any = {
     'grafico1': {
-      'labels': ['Con Frijoles', 'Con Natilla', 'Con tocino'],
+      'labels': ['Satisfactorio', 'Mal', 'Deficiente'],
       'data':  [24, 30, 46],
       'type': 'doughnut',
       'leyenda': 'El pan se come con'

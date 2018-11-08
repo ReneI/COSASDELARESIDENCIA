@@ -16,7 +16,6 @@ export class GuardGuard implements CanActivate {
     if(this.auth.getUser) {
       console.log('si logeado');
       return true;
-
     } else {
       console.log('no logeado');
       

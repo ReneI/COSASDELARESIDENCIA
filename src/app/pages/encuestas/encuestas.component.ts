@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-encuestas',
   templateUrl: './encuestas.component.html',
   styleUrls: ['./encuestas.component.css']
 })
 export class EncuestasComponent implements OnInit {
-
-  constructor() { }
+/*   node_modules/jquery/dist/jquery.min.js
+ */  constructor() { }
   graficos: any = {
     'grafico1': {
       'labels': ['Con Frijoles', 'Con Natilla', 'Con tocino'],

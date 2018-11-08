@@ -30,17 +30,6 @@ export class SidebarService {
   }];
 
 
-
-  menuInici: any[] = [
-    { titulo: 'Panel Administrativo', icono: 'mdi-account-box',
-      submenu: [
-
-        { titulo: 'hola', url: '/aqui'},
-        { titulo: 'Inicio', url: '/dasboard'},
-        { titulo: 'Informacion del sistem', url: '/manual'},
-        { titulo: 'Configuracion de estilo', url: '/manual'}
-      ] }];
-
   Reportes: any[] = [
     { titulo: 'Reportes', icono: 'mdi-account-box',
       submenu: [
@@ -57,15 +46,12 @@ export class SidebarService {
             { titulo: 'Agregar nuevo +', url: '/nuevo'}
           ] }];
 
-
   Encuestas: any[] = [
-    { titulo: 'Encuestas', icono: 'mdi-account-box',url: '/encuestas' ,
+    { titulo: 'Encuestas', icono: 'mdi-account-box', url: '/encuestas' ,
       submenu: [
 
-        { titulo: 'hola', url: '/aqui'},
-        { titulo: 'Inicio', url: '/dasboard'},
-        { titulo: 'Informacion del sistem', url: '/manual'},
-        { titulo: 'Configuracion de estilo', url: '/manual'}
+        { titulo: 'encuestas', url: '/encuestas'},
+        { titulo: 'agregar', url: '/dasboard'}
       ] }];
 
   constructor() { }

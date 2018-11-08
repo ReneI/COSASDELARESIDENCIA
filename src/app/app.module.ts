@@ -12,10 +12,11 @@ import { DocumentacionComponent } from './pages/documentacion/documentacion.comp
 import {BrowserModule} from '@angular/platform-browser';
 // temporal
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { EncuestaComponent } from './components/encuesta/encuesta.component';
-//Servicios
+import {  } from './components/encuesta/encuesta.component';
+// Servicios
 import { ServiceModule } from './services/service.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EncuestaPublicaComponent } from './encuesta/encuestapublica/encuesta.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegisterComponent,
     DocumentacionComponent,
-    EncuestaComponent
+    EncuestaPublicaComponent
+    
   ],
   imports: [ SweetAlert2Module.forRoot({
     buttonsStyling: false,

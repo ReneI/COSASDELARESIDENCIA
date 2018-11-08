@@ -16,11 +16,12 @@ export class HeaderComponent implements OnInit {
     this.checkuser();
       
   }
-      salir(): void {
-        // this.router.navigate(['/login']);
+  salir() {
+  console.log('saliendo');
+      this.router.navigate(['/login']);
 
         this.login.logout().subscribe(data => {console.log(data);
-        }, error => { console.log(error);} );
+        }, error => { console.log(error); }  );
       console.log('cerrado');
 }
 checkuser():void{
