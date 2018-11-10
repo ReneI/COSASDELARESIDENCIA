@@ -31,6 +31,10 @@ import { DataTableComponent } from '../data-table/data-table.component';
 import { UsuariosComponent } from './perfil/usuarios/usuarios.component';
 import {DemoMaterialModule} from './materia.module';
 import {MatNativeDateModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
 
   declarations: [
@@ -65,13 +69,18 @@ import {MatNativeDateModule} from '@angular/material';
     ShareModule,
     APP_ROUTES,
     PAGES_ROUTE,
+    BrowserAnimationsModule,
     FormsModule,
     ChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
 NgxSpinnerModule,
-DemoMaterialModule
+DemoMaterialModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ]
 
 })
