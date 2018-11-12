@@ -1,6 +1,8 @@
 
 import * as jQuery from 'jquery';
 window['jQuery'] = jQuery;
+import * as ko from 'knockout'; window['knockout'] = ko;
+
 
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
