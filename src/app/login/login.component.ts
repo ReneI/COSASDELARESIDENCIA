@@ -53,6 +53,9 @@ public user: usuario = {
 
   ngOnInit() {
 
+    if (this.login.getToken()) {
+      this.router.navigate(['/dashboard']);
+   }
     initplugings();
     this.forma = new FormGroup({
         correo: new FormControl(null, [ Validators.required, Validators.email]),

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {AppComponent} from '../app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProgressComponent} from './progress/progress.component';
@@ -32,9 +32,22 @@ import { UsuariosComponent } from './perfil/usuarios/usuarios.component';
 import {DemoMaterialModule} from './materia.module';
 import {MatNativeDateModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarioComponent } from '../components/calendario/calendario.component';
 
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+/* panel de reportes
+ */
+import {CalendarDateFormatter, CalendarModule, DateAdapter, MOMENT, CalendarMomentDateFormatter } from 'angular-calendar';
+import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
+import { registerLocaleData } from '@angular/common';
+import moment from 'moment-timezone';
+import { adapterFactory } from 'angular-calendar/date-adapters/moment';
+import {ImagePipe} from '../pipes/image.pipe';
+
+
+export function momentAdapterFactory() {
+  return adapterFactory(moment);
+}
+
 @NgModule({
 
   declarations: [
@@ -56,7 +69,10 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     ClientesComponent,
     ClienteNuevoComponent,
     DataTableComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    PanelreportesComponent,
+    CalendarioComponent
+
 
   ],
   exports: [
@@ -77,10 +93,26 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     ReactiveFormsModule,
 NgxSpinnerModule,
 DemoMaterialModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    })
+    ImagePipe,
+CalendarModule.forRoot(
+  {
+    provide: DateAdapter,
+    useFactory: momentAdapterFactory
+  },
+  {
+    dateFormatter: {
+      provide: CalendarDateFormatter,
+      useClass: CalendarMomentDateFormatter
+    }
+  }
+)
+  ],
+  providers: [
+    {
+      provide: MOMENT,
+      useValue: moment
+    },
+    { provide: LOCALE_ID, useValue: 'es-MX' }
   ]
 
 })

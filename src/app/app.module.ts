@@ -25,7 +25,6 @@ import { EncuestaPublicaComponent } from './encuesta/encuestapublica/encuesta.co
     RegisterComponent,
     DocumentacionComponent,
     EncuestaPublicaComponent
-    
   ],
   imports: [ SweetAlert2Module.forRoot({
     buttonsStyling: false,

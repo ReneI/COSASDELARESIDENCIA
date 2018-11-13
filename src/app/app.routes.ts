@@ -12,7 +12,7 @@ import { RegisterComponent } from './login/register.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'registro', component: RegisterComponent, canActivate: [GuardGuard] },
+    { path: 'registro', component: RegisterComponent },
      { path: 'calidad', component: EncuestaPublicaComponent }
   //  { path: '**', component: NopagefoundComponent }
   //  { path: '', component: NopagefoundComponent }

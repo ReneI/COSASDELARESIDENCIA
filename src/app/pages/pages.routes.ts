@@ -12,7 +12,7 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {ClientesComponent} from './clientes/clientes.component';
 import {ClienteNuevoComponent} from './clientes/nuevo/clientenuevo.component';
 import { GuardGuard } from '../services/guard/guard.guard';
-
+import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
 const pagesroutes: Routes = [
   {
     path: '',
@@ -31,6 +31,8 @@ const pagesroutes: Routes = [
       { path: 'estadisticas', component: EncuestasComponent }
       ]
     },
+    { path: 'reportespanel', component: PanelreportesComponent , data :  { titulo: 'Perfil'} },
+
       { path: 'estilo', component: AccoutSettingsComponent, data :  { titulo: 'Configuracion'} },
       { path: 'perfil', component: PerfilComponent, data :  { titulo: 'Perfil'} },
       { path: 'clientes',  component: ClientesComponent, data :  { titulo: 'Clientes'}},
