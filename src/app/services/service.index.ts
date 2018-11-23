@@ -6,6 +6,6 @@ export { MensajesService } from './settings/mensajes.service';
 export  {UsuarioService } from './usuario/usuario.service';
 export  { AuthService } from './auth/auth.service';
 export  { AuthGuardService } from './auth/authguard.service';
-
 export { NavbarService } from './shared/navbar.service';
 export {ClientesService}  from './clientes/clientes.service';
+export { SubirArchivosService } from './archivos/subir-archivos.service';

@@ -4,18 +4,22 @@
     <h3 class="box-title m-t-40 m-b-0">Registratar nuevo cliente</h3>
     <div class="form-group m-t-20">
         <div class="col-xs-12">
-            <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+          <label class="col-2 col-form-label ">NOMBRE</label>
+
+          <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
         </div>
     </div>
     <div class="form-group m-t-20 ">
         <div class="col-xs-7 ">
-            <label class="col-2 col-form-label ">*</label>
+            <label class="col-2 col-form-label ">EMPRESA</label>
             <input class="form-control " type="text " placeholder="Empresa " formControlName="empresa">
         </div>
     </div>
     <div class="form-group ">
         <div class="col-xs-12 ">
-            <input class="form-control " type="email " placeholder="Correo " formControlName="email">
+          <label class="col-2 col-form-label ">CORREO</label>
+
+          <input class="form-control " type="email " placeholder="Correo " formControlName="email">
 
         </div>
     </div>
@@ -38,21 +42,80 @@
         </div>
         <div class="col-3 ">
             <label for=" ">Ciudad</label>
-            <select class="custom-select ">
-                <option selected>Open this select menu</option>
-                <option value="1 ">One</option>
-                <option value="2 ">Two</option>
-                <option value="3 ">Three</option>
-              </select>
+          <input type="text " class="form-control " placeholder="Ciudad " formControlName="ciudad">
+
         </div>
-        <div class="col-3 "><label for=" ">Estado</label>
-            <select class="custom-select ">
-                <option selected>Open this select menu</option>
-                <option value="1 ">Durango</option>
-                <option value="2 ">Zacatecas</option>
-                <option value="3 ">Three</option>
-              </select>
-        </div>
+      <!–– Dropdown estados de México ––>
+
+      <select clas="custom-select" name="estados">
+
+        <option value="0">Todo México</option>
+
+        <option value="1">Aguascalientes</option>
+
+        <option value="2">Baja California</option>
+
+        <option value="3">Baja California Sur</option>
+
+        <option value="4">Campeche</option>
+
+        <option value="5">Coahuila de Zaragoza</option>
+
+        <option value="6">Colima</option>
+
+        <option value="7">Chiapas</option>
+
+        <option value="8">Chihuahua</option>
+
+        <option value="9">Distrito Federal</option>
+
+        <option value="10">Durango</option>
+
+        <option value="11">Guanajuato</option>
+
+        <option value="12">Guerrero</option>
+
+        <option value="13">Hidalgo</option>
+
+        <option value="14">Jalisco</option>
+
+        <option value="15">México</option>
+
+        <option value="16">Michoacán de Ocampo</option>
+
+        <option value="17">Morelos</option>
+
+        <option value="18">Nayarit</option>
+
+        <option value="19">Nuevo León</option>
+
+        <option value="20">Oaxaca</option>
+
+        <option value="21">Puebla</option>
+
+        <option value="22">Querétaro</option>
+
+        <option value="23">Quintana Roo</option>
+
+        <option value="24">San Luis Potosí</option>
+
+        <option value="25">Sinaloa</option>
+
+        <option value="26">Sonora</option>
+
+        <option value="27">Tabasco</option>
+
+        <option value="28">Tamaulipas</option>
+
+        <option value="29">Tlaxcala</option>
+
+        <option value="30">Veracruz de Ignacio de la Llave</option>
+
+        <option value="31">Yucatán</option>
+
+        <option value="32">Zacatecas</option>
+
+      </select>
     </div>
     <div class="row ">
         <label class="sr-only ">CP</label>
@@ -70,6 +133,6 @@
     <label class="custom-file ">
         <input type="file " id="file " class="custom-file-input ">
         <span class="custom-file-control "></span>
-        
+
       </label>
 </form>

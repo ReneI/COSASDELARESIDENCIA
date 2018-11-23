@@ -13,6 +13,8 @@ import {ClientesComponent} from './clientes/clientes.component';
 import {ClienteNuevoComponent} from './clientes/nuevo/clientenuevo.component';
 import { GuardGuard } from '../services/guard/guard.guard';
 import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+
 const pagesroutes: Routes = [
   {
     path: '',
@@ -37,6 +39,8 @@ const pagesroutes: Routes = [
       { path: 'perfil', component: PerfilComponent, data :  { titulo: 'Perfil'} },
       { path: 'clientes',  component: ClientesComponent, data :  { titulo: 'Clientes'}},
       { path: 'nuevo',     component: ClienteNuevoComponent, data :  { titulo: 'Clientes'}},
+      { path: 'usuarios', component: UsuariosComponent, data :  { titulo: 'usuarios'} },
+
       { path: 'promesas', component: PromesasComponent, data :  { titulo: 'Panel administrativo'} },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 

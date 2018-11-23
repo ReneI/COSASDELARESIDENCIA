@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService, UsuarioService} from '../../services/service.index';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil',
@@ -9,6 +10,9 @@ import {AuthService, UsuarioService} from '../../services/service.index';
 export class PerfilComponent implements OnInit {
   usuario;
   usuariotmp;
+
+  imagenSubir: File;
+  imagenTemp;
 
   constructor(private  Usuario: AuthService)  {
     this.usuario = this.Usuario.Usuariodata;
@@ -43,25 +47,17 @@ seleccionImage( archivo: File ) {
   reader.onloadend = () => this.imagenTemp = reader.result;
 
 }
+
+
+cambiarImagen() {
+
+  this.Usuario.cambiarImagen( this.imagenSubir, this.usuario.id );
+
+}
 ngOnInit() {
 
     console.log(this.usuario);
   }
 
 
-
-/* 
-  saveEditable(valor) {
-    console.log(valor);
-      this.Usuario.updateUsuario({puesto: valor}).subscribe(data => console.log(data));
-     console.log('http.service: ');
-    console.log('http.service: ');
-  } */
-  // modificarpuesto(valor) {
-  //   this.usuario.posicion = valor;
-  //   console.log(this.usuario);
-  //   console.log(valor);
-  //   this.Usuario.updateUsuario(this.id, this.usuario).subscribe(data => data);
-  //   console.log('http.service: ');
-  // }
 }

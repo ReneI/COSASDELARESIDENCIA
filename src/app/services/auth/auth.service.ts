@@ -7,6 +7,9 @@ import { usuario} from '../../models/usuarios.model';
 import {isNullOrUndefined} from 'util';
 import swal from 'sweetalert2';
 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {SubirArchivosService} from '../archivos/subir-archivos.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +19,7 @@ export class AuthService {
 Usuariodata;
 
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public _subirArchivoService: SubirArchivosService) {
   this.getUser();
 
   }
@@ -27,8 +30,8 @@ Usuariodata;
   login(email: string, recordar: boolean = false, password: string): Observable<any> {
 
   if (recordar) {
-    localStorage.setItem('email',email);
-    console.log('guardar recuerdame')
+    localStorage.setItem('email', email);
+    console.log('guardar recuerdame');
   } else{
     localStorage.removeItem('email');
   }
@@ -39,7 +42,7 @@ Usuariodata;
   }
 
   setUser(user):void {
-    
+
     let us = JSON.stringify(user);
     this.Usuariodata = user;
     localStorage.setItem('usuario', us);
@@ -82,12 +85,12 @@ this.Usuariodata = null;
 
  //   http://localhost:3000/api/empleados/5be5d489c0c9bd2d38a673f9/upload-frog?access_token=fUQPAKCfFi0Igv5AW76dGppMss5twVGsjstkXc6dmunwqz66cqFBJtIrJuDNG7Qh
 
-    this._subirArchivoService.subirArchivo( archivo, 'usuarios', id )
+    this._subirArchivoService.subirArchivoPerfil( archivo, id )
           .then( (resp: any) => {
 
-            this.usuario.img = resp.usuario.img;
-            swal( 'Imagen Actualizada', this.usuario.nombre, 'success' );
-            this.guardarStorage( id, this.token, this.usuario, this.menu );
+            this.Usuariodata.img = resp.usuario.img;
+            swal( 'Imagen Actualizada', this.Usuariodata.nombre, 'success' );
+            this.setUser( this.Usuariodata);
 
           })
           .catch( resp => {
@@ -95,6 +98,10 @@ this.Usuariodata = null;
           }) ;
 
   }
+
+
+
+
 actualizarUsuario( usuari: any ) {
   let usuarioactual = localStorage.getItem("accessToken");
   let url = `${URL_RAIZ}/api/empleados/upsertWithWhere?where={"id":"${this.Usuariodata.id}"}&access_token=${usuarioactual}`;
@@ -129,4 +136,14 @@ console.log(url);
 }
 
 
+  borrarUsuario(_id: any) {
+
+  }
+
+  cargarUsuarios(desde: number = 0 ) {
+    // api/empleados?filter=%7B%22skip%22%3A%224%22%7D
+    const  url = `${URL_RAIZ}/api/empleados?filter={"skip":"${desde}"}`;
+   return this.http.get( url )
+
+  }
 }

@@ -1,8 +1,12 @@
 import { CalendarioComponent } from './../../../components/calendario/calendario.component';
-import { Component, ChangeDetectionStrategy,  ChangeDetectorRef} from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from '@angular/core';
 // As an alternative to rrule there is also rSchedule
 // See https://github.com/mattlewis92/angular-calendar/issues/711#issuecomment-418537158 for more info
-import { RRule, RRuleSet, rrulestr } from 'rrule';
+import RRule from 'rrule';
 import moment from 'moment-timezone';
 import {
   CalendarDayViewBeforeRenderEvent,
@@ -11,21 +15,9 @@ import {
   CalendarView,
   CalendarWeekViewBeforeRenderEvent
 } from 'angular-calendar';
+import { colors } from './colors';
 import { ViewPeriod } from 'calendar-utils';
-const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
-  }
-};
+
 interface RecurringEvent {
   title: string;
   color: any;
@@ -36,23 +28,24 @@ interface RecurringEvent {
     byweekday?: any;
   };
 }
+
+// we set the timezone to UTC to avoid issues with DST changes
+// see https://github.com/mattlewis92/angular-calendar/issues/717 for more info
 moment.tz.setDefault('Utc');
-
-
-
-@Component({
+@Component({ 
   selector: 'app-calendario',
-  templateUrl: './panelreportes.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+ templateUrl: './panelreportes.component.html',
+ changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./panelreportes.component.css'] })
 
-  styleUrls: ['./panelreportes.component.css']
-})
-export class PanelreportesComponent  {
+export class PanelreportesComponent {
   view = CalendarView.Month;
 
+  events: CalendarEvent[] = [];
+
+  clickedDate: Date;
   viewDate = moment().toDate();
 
- 
   recurringEvents: RecurringEvent[] = [
     {
       title: 'Recurs on the 5th of each month',
@@ -80,10 +73,6 @@ export class PanelreportesComponent  {
       }
     }
   ];
-
-  locale: string = 'es';
-  clickedDate: Date;
-
 
   calendarEvents: CalendarEvent[] = [];
 
@@ -129,6 +118,5 @@ export class PanelreportesComponent  {
     }
   }
 
-
-
 }
+

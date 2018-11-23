@@ -1,3 +1,4 @@
+import { UsuariosComponent } from './usuarios/usuarios.component';
 import { CommonModule } from '@angular/common';
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {AppComponent} from '../app.component';
@@ -28,7 +29,6 @@ import { ClientesComponent} from './clientes/clientes.component';
 import { ClienteNuevoComponent } from './clientes/nuevo/clientenuevo.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { DataTableComponent } from '../data-table/data-table.component';
-import { UsuariosComponent } from './perfil/usuarios/usuarios.component';
 import {DemoMaterialModule} from './materia.module';
 import {MatNativeDateModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

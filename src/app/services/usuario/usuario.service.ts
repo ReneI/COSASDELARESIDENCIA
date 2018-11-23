@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { usuario} from '../../models/usuarios.model';
 import { URL_RAIZ} from '../../config/config';
 import {Observable} from 'rxjs';
-import  { AuthService } from '../auth/auth.service';
+import { AuthService } from '../auth/auth.service';
 
 import {map } from 'rxjs/operators';
 @Injectable({

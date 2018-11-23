@@ -19,7 +19,11 @@ export class SidebarService {
     submenu: [
       { titulo: 'Inicio', url: '/dasboard'},
       { titulo: 'Informacion del sistema', url: '/manual'},
-      { titulo: 'Configuracion de estilos', url: '/estilo'}
+      { titulo: 'Configuracion de estilos', url: '/estilo'},
+      { titulo: 'perfil', url: '/perfil'},
+      { titulo: 'usuarios', url: '/usuarios'},
+
+
       ],
     empleados: [{ nombre: 'Jose Perez Roberto', url: '/empleado/:id'},
       { nombre: 'Jose Perez Roberto', url: '/empleado/:id'},
