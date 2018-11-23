@@ -1,5 +1,5 @@
 import { CalendarioComponent } from './../../../components/calendario/calendario.component';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy,  ChangeDetectorRef} from '@angular/core';
 // As an alternative to rrule there is also rSchedule
 // See https://github.com/mattlewis92/angular-calendar/issues/711#issuecomment-418537158 for more info
 import { RRule, RRuleSet, rrulestr } from 'rrule';
@@ -52,6 +52,7 @@ export class PanelreportesComponent  {
 
   viewDate = moment().toDate();
 
+ 
   recurringEvents: RecurringEvent[] = [
     {
       title: 'Recurs on the 5th of each month',
@@ -81,13 +82,53 @@ export class PanelreportesComponent  {
   ];
 
   locale: string = 'es';
-
-  constructor() { }
-
-
-
-  events: CalendarEvent[] = [];
-
   clickedDate: Date;
+
+
+  calendarEvents: CalendarEvent[] = [];
+
+  viewPeriod: ViewPeriod;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  updateCalendarEvents(
+    viewRender:
+      | CalendarMonthViewBeforeRenderEvent
+      | CalendarWeekViewBeforeRenderEvent
+      | CalendarDayViewBeforeRenderEvent
+  ): void {
+    if (
+      !this.viewPeriod ||
+      !moment(this.viewPeriod.start).isSame(viewRender.period.start) ||
+      !moment(this.viewPeriod.end).isSame(viewRender.period.end)
+    ) {
+      this.viewPeriod = viewRender.period;
+      this.calendarEvents = [];
+
+      this.recurringEvents.forEach(event => {
+        const rule: RRule = new RRule({
+          ...event.rrule,
+          dtstart: moment(viewRender.period.start)
+            .startOf('day')
+            .toDate(),
+          until: moment(viewRender.period.end)
+            .endOf('day')
+            .toDate()
+        });
+        const { title, color } = event;
+
+        rule.all().forEach(date => {
+          this.calendarEvents.push({
+            title,
+            color,
+            start: moment(date).toDate()
+          });
+        });
+      });
+      this.cdr.detectChanges();
+    }
+  }
+
+
 
 }
