@@ -1,12 +1,16 @@
+import { URL_SERVICIO } from '../config/config';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'image'
+  name: 'imagen'
 })
 export class ImagePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(img: string, args?: any): any {
+   let url = URL_SERVICIO + '/img';
+
+   
+    return url;
   }
 
 }

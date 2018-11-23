@@ -41,7 +41,9 @@ import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.c
 import { registerLocaleData } from '@angular/common';
 import moment from 'moment-timezone';
 import { adapterFactory } from 'angular-calendar/date-adapters/moment';
-import {ImagePipe} from '../pipes/image.pipe';
+
+// imagen de perfil
+import {PipesModule} from '../pipes/pipes.module';
 
 
 export function momentAdapterFactory() {
@@ -87,13 +89,13 @@ export function momentAdapterFactory() {
     PAGES_ROUTE,
     BrowserAnimationsModule,
     FormsModule,
+    PipesModule,
     ChartsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
 NgxSpinnerModule,
 DemoMaterialModule,
-    ImagePipe,
 CalendarModule.forRoot(
   {
     provide: DateAdapter,

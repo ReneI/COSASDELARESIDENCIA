@@ -8,6 +8,7 @@ import {NopagefoundComponent} from './nopagefound/nopagefound.component';
 import {APP_ROUTES} from '../app.routes';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CommonModule} from '@angular/common';
     BrowserModule,
     APP_ROUTES,
     RouterModule,
-    CommonModule
+    CommonModule,
+    PipesModule
 
 
   ],

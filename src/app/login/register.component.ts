@@ -13,8 +13,32 @@ import {Observable} from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class RegisterComponent implements OnInit {
-      forma: FormGroup;
+  constructor(public router: Router, public _registroService: UsuarioService) {
 
+
+  }
+      forma: FormGroup;
+      ngOnInit(): void {
+        console.log('pantalla');
+        this.forma = new FormGroup({
+    
+          nombre: new FormControl(null, Validators.required),
+          email: new FormControl(null, [Validators.required, Validators.email ]),
+    
+          password: new FormControl(null, Validators.required),
+          password1: new FormControl(null, Validators.required),
+          condicionales: new FormControl(false)
+        },{ validators: this.soniguales('password', 'password1') } );
+                this.forma.setValue({
+    
+          nombre: 'test',
+          password: 'pass',
+          password1: 'pass',
+          email: 'correo@gnail.com',
+          condicionales: true
+        }   );
+    
+      }
     soniguales(campo1: string, campo2: string) {
     return ( grupo : FormGroup) => {
 
@@ -45,10 +69,7 @@ export class RegisterComponent implements OnInit {
     //       });
     // return null
     // }
-  constructor(public router: Router, public _registroService: UsuarioService) {
-
-
-    }
+  
 
 guardar() {
 if (this.forma.invalid) {
@@ -86,26 +107,6 @@ if ( this.forma.valid) {
 
   }
   }
-  ngOnInit(): void {
-    this.forma = new FormGroup({
 
-      nombre: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email ]),
-
-      password: new FormControl(null, Validators.required),
-      password1: new FormControl(null, Validators.required),
-      condicionales: new FormControl(false)
-    },{ validators: this.soniguales('password', 'password1') } );
-    this.forma.setValue({
-
-      nombre: 'test',
-      password: 'pass',
-      password1: 'pass',
-
-      email: 'correo@gnail.com',
-      condicionales: true
-    }   );
-
-  }
 
 }

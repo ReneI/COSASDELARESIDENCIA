@@ -9,11 +9,13 @@ import {AuthService, NavbarService} from '../../services/service.index';
 })
 export class HeaderComponent implements OnInit {
 
+  Usuario;
    public islogin: boolean = false;
-  constructor(private  router: Router, private menu: NavbarService, private login: AuthService) { }
+  constructor(private  router: Router, private menu: NavbarService, private login: AuthService,) { }
 
   ngOnInit(  ) {
     this.checkuser();
+    this.Usuario = this.login.getUser();
       
   }
   salir() {

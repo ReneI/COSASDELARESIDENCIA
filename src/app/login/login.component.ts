@@ -13,6 +13,8 @@ declare function initplugings();
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  email: string;
+  recuerdame:boolean=false;
   forma: FormGroup;
   error: boolean = false;
        correo: string = 'hola';
@@ -27,8 +29,7 @@ export class LoginComponent implements OnInit {
 public user: usuario = {
 
    email:  '',
-  password: ''
-};
+  password: ''};
   ingresar() {
 
     console.log(this.forma.value.correo);
@@ -38,7 +39,7 @@ public user: usuario = {
       // console.log(this.forma.value);
       // this.router.navigate(['/dashboard']);
       console.log('Bienvenido');
-      return this.login.login(this.user.email, this.user.password).subscribe(data =>
+      return this.login.login(this.forma.value.correo,this.forma.value.recuerdame , this.forma.value.password).subscribe(data =>
 
       {
         let token = data.id;
@@ -52,6 +53,10 @@ public user: usuario = {
     }
 
   ngOnInit() {
+    this.email = localStorage.getItem('email') || '';
+    if(this.email.length>0){
+        this.recuerdame =true;
+    }
 
     if (this.login.getToken()) {
       this.router.navigate(['/dashboard']);
@@ -59,7 +64,9 @@ public user: usuario = {
     initplugings();
     this.forma = new FormGroup({
         correo: new FormControl(null, [ Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6) ])
+      password: new FormControl(null, [Validators.required, Validators.minLength(6) ]),
+      recuerdame: new FormControl(null)
+
     }
     );
   }

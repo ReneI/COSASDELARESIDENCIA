@@ -10,13 +10,20 @@ import {isNullOrUndefined} from 'util';
   providedIn: 'root'
 })
 export class AuthService {
-
+Usuariodata= this.getUser();
   constructor(public http: HttpClient) {}
   headers: HttpHeaders =  new HttpHeaders({
     "Content-Type" : "application/json"
 
   });
-  login(email: string, password: string): Observable<any> {
+  login(email: string, recordar: boolean =false, password: string): Observable<any> {
+
+  if(recordar){
+    localStorage.setItem('email',email);
+    console.log('guardar recuerdame')
+  }else{
+    localStorage.removeItem('email');
+  }
     const url = `${URL_RAIZ}/api/empleados/login?include=user`;
 
     return this.http.post(url,{ email, password},{ headers: this.headers}).pipe(

@@ -19,11 +19,11 @@ export class UsuarioService {
   });
 
   constructor(public  http: HttpClient, public auth: AuthService) { }
-obj = this.auth.getUser().id;
+      //  obj = this.auth.getUser().id;
 
   registrar( Usuario: usuario) {
     let url = URL_RAIZ + '/api/empleados';
-return this.http.post(url, Usuario);
+    return this.http.post(url, Usuario);
 
   }
 
@@ -32,7 +32,7 @@ return this.http.post(url, Usuario);
        return this.http.get(url);
   }
   updateUsuario(Usuario) {
-    console.log(this.obj)
+    // console.log(this.obj)
   let i = {
      id: Usuario
 
