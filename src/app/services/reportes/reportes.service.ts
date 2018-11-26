@@ -33,6 +33,22 @@ registrarreporte(fecha){
   })
   }
 
+  private handleError(err: HttpErrorResponse) {
+    if( err.status == 500 ) {
+
+        return Observable.throw(new Error(<YOUR USERFRIENDLY MESSAGE>));
+
+    } else if( err.status == 400 ) {
+
+        return Observable.throw(new Error(<YOUR MESSAGE>));
+    }
+
+    // you can also catch all errors of a group like this
+    else if( err.status < 500 && err.status >= 400 ) {
+
+        return Observable.throw(new Error(<CLIENT ERROR MESSAGE>));
+    }
+}
 
 }
 regristrarreporte
