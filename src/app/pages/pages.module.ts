@@ -44,6 +44,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/moment';
 
 // imagen de perfil
 import {PipesModule} from '../pipes/pipes.module';
+import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
 
 
 export function momentAdapterFactory() {
@@ -73,7 +74,8 @@ export function momentAdapterFactory() {
     DataTableComponent,
     UsuariosComponent,
     PanelreportesComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    UsuariodetalleComponent
 
 
   ],

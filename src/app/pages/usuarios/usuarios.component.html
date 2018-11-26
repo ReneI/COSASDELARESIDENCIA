@@ -1,0 +1,105 @@
+<style>
+    .img-50 {
+        width: 40px;
+    }
+</style>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscar( input.value )" type="text" class="form-control" placeholder="Buscar usuario...">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <p> {{usuarios | json }}</p> -->
+<!--<div class="row animated fadeIn" *ngIf="cargando">-->
+
+<!--<div class="col-sm-12">-->
+
+<!--<div class="alert alert-warning text-center">-->
+<!--<strong>Cargando</strong>-->
+<!--<br>-->
+<!--<i class="fa fa-refresh fa-spin fa-2x"></i>-->
+<!--<br>-->
+<!--<span>Espere por favor</span>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+    <div class="col-12 ">
+        <div class="card ">
+            <div class="card-body ">
+
+                <h3 class="card-title ">Usuarios registrados ( <small>{{ totalRegistros }}</small> )</h3>
+
+
+                <table class="table table-hover ">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>foto</th>
+                            <th>nombre</th>
+                            <th>tipo</th>
+                            <th>modificaciones</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios; let i = index ">
+                            <td class="w70 ">
+                                {{i+1}}
+                                <!-- <img (click)="mostrarModal( usuario.id ) " [src]="usuario.img | imagen " class="img-50 img-circle pointer "> -->
+                            </td>
+                            <td>
+                                <img src="{{usuario.link}}" alt="" class="img-50 img-circle">
+                            </td>
+                            <td>{{ usuario.nombre }} {{usuario.apellido}}</td>
+
+                            <td>{{ usuario.email }}</td>
+
+                            <td>
+                                <td>
+
+                                    <select [(ngModel)]="usuario.rol" name="rol" class="form-control">
+                                                <option value="ADMIN_ROLE">ADMIN_ROLE</option>
+                                                <option value="USER_ROLE">USER_ROLE</option>
+                                            </select>
+
+                                </td>
+                                <label *ngIf="usuario.rol" class="label label-danger">{{usuario.rol}}</label>
+                            </td>
+                            <td>
+                                <a href="">ver info</a>
+                                <button (click)="guardarUsuario( usuario )" class="btn btn-primary">
+                                <i class="fa fa-save"></i>
+                              </button>
+
+                                <button (click)="borrar( usuario )" class="btn btn-danger">
+                                  <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <button (click)="cargasDesde(-4) " class="btn btn-secondary ">
+                Anteriores
+              </button>
+
+                <button (click)="cargasDesde(4) " class="btn btn-secondary ">
+                  Siguientes
+              </button>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

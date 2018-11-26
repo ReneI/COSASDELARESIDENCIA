@@ -137,13 +137,25 @@ console.log(url);
 
 
   borrarUsuario(_id: any) {
+    const  url = `${URL_RAIZ}/api/empleados/${_id}`;
+    return this.http.delete( url );
+
 
   }
 
-  cargarUsuarios(desde: number = 0 ) {
+  cargarUsuarios(desde: number = 0) {
     // api/empleados?filter=%7B%22skip%22%3A%224%22%7D
-    const  url = `${URL_RAIZ}/api/empleados?filter={"skip":"${desde}"}`;
-   return this.http.get( url )
+    const  url = `${URL_RAIZ}/api/empleados?filter={"limit":4,"skip":"${desde}"}`;
+   return this.http.get( url );
 
   }
+
+  buscar(buscar) {
+    // api/empleados?filter=%7B%22skip%22%3A%224%22%7D
+    const  url = `${URL_RAIZ}/api/empleados?filter={"where":{"nombre": "${buscar}"}}`;
+   console.log(url);
+    return this.http.get( url );
+
+  }
+
 }
