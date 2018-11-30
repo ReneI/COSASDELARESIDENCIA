@@ -20,6 +20,75 @@ export class EncuestaPublicaComponent implements OnInit {
   }
 
   title = "app works!";
+
+ json2 = {
+    locale: "es",
+    pages: [
+     {
+      name: "page1",
+      elements: [
+       {
+        type: "radiogroup",
+        name: "question6",
+        choices: [
+         "item1",
+         "item2",
+         "item3"
+        ]
+       },
+       {
+        type: "rating",
+        name: "question1",
+        title: "Como fue el trato del personal que lo atendió?",
+        isRequired: true
+       },
+       {
+        type: "comment",
+        name: "question3",
+        title: "¿Porque?"
+       }
+      ]
+     },
+     {
+      name: "page2",
+      elements: [
+       {
+        type: "panel",
+        name: "panel1",
+        elements: [
+         {
+          type: "radiogroup",
+          name: "question4",
+          startWithNewLine: false,
+          title: "Las visitas durante el proceso, por parte del personal de SACI fiueron en tiempo y forma",
+          isRequired: true,
+          choices: [
+           {
+            value: "item1",
+            text: "Si"
+           },
+           {
+            value: "item2",
+            text: "No"
+           }
+          ],
+          choicesOrder: "desc"
+         },
+         {
+          type: "comment",
+          name: "question5",
+          title: "¿Porque?"
+         }
+        ],
+        title: "Evaluation del Servicio "
+       }
+      ]
+     }
+    ],
+    maxTimeToFinish: -1
+   }
+
+  
   json = {
     title: "Product Feedback Survey Example",
     showProgressBar: "top",

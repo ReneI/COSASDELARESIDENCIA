@@ -16,7 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceModule } from './services/service.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EncuestaPublicaComponent } from './encuesta/encuestapublica/encuesta.component';
-
+import { EncuestaModule } from './components/encuesta-editor/encuesta.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { EncuestaPublicaComponent } from './encuesta/encuestapublica/encuesta.co
     FormsModule,
     ServiceModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    EncuestaModule
 
   ],
   providers: [],
