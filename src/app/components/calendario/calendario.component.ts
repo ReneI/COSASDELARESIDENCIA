@@ -60,8 +60,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     <br>
   `
 })
-export class CalendarioComponent
-{
+export class CalendarHeaderComponent {
   @Input()
   view: string;
 
@@ -69,7 +68,7 @@ export class CalendarioComponent
   viewDate: Date;
 
   @Input()
-  locale: string = 'es';
+  locale: string = 'en';
 
   @Output()
   viewChange: EventEmitter<string> = new EventEmitter();
@@ -77,4 +76,3 @@ export class CalendarioComponent
   @Output()
   viewDateChange: EventEmitter<Date> = new EventEmitter();
 }
-

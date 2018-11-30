@@ -1,9 +1,9 @@
-<mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+<!-- <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
 </mwl-demo-utils-calendar-header>
 
 <div class="alert alert-info">
     Click on a day on the view.
-    <strong *ngIf="clickedDate">You clicked on this day: {{ clickedDate | date:'medium' }}</strong>
+    <strong *ngIf="clickedDate">la fecha escogida es: {{ clickedDate | date:'medium' }}</strong>
     <a href="#">Agregar mi reportes semanal </a>
 </div>
 
@@ -12,8 +12,42 @@
 <div [ngSwitch]="view">
     <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="calendarEvents" [events]="events" (dayClicked)="clickedDate = $event.day.date">
     </mwl-calendar-month-view>
-    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" (dayHeaderClicked)="clickedDate = $event.day.date">
-    </mwl-calendar-week-view>
-    <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events">
-    </mwl-calendar-day-view>
+
+
+    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" (dayHeaderClicked)="dayHeaderClicked($event)">
+ (dayHeaderClicked)="clickedDate = $event.day.date" 
+</mwl-calendar-week-view>
+<mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events">
+</mwl-calendar-day-view>
+</div> 
+-->
+<div class="alert alert-info">
+    Click on a day on the view.
+    <strong *ngIf="clickedDate">la fecha escogida es: {{ clickedDate | date:'medium' }}</strong>
+    <a [routerLink]="['/reporte', clickedDate | date:'medium']">Crear reporte</a>
+</div>
+
+<mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate" (viewDateChange)="fetchEvents()" (viewChange)="fetchEvents()">
+</mwl-demo-utils-calendar-header>
+
+<ng-template #loading>
+    <div class="text-center">
+        <i class="fa fa-spin fa-spinner fa-5x"></i>
+        <br> Cargando reportes
+    </div>
+</ng-template>
+
+<div *ngIf="events$ | async; else loading; let events">
+    <div [ngSwitch]="view">
+        <p>hola</p>
+        <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date">
+        </mwl-calendar-month-view>
+        <!-- 
+        <mwl-calendar-month-view *ngSwitchCase="'month'" [excludeDays]="excludeDays" (dayHeaderClicked)="clickedDate = $event.day.date" [viewDate]="viewDate" [events]="events" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="eventClicked($event.event)">
+        </mwl-calendar-month-view> -->
+        <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" (eventClicked)="eventClicked($event.event)">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" (eventClicked)="eventClicked($event.event)">
+        </mwl-calendar-day-view>
+    </div>
 </div>

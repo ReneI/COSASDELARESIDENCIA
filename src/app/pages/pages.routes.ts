@@ -14,6 +14,7 @@ import {ClienteNuevoComponent} from './clientes/nuevo/clientenuevo.component';
 import { GuardGuard } from '../services/guard/guard.guard';
 import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
 
 const pagesroutes: Routes = [
   {
@@ -34,12 +35,19 @@ const pagesroutes: Routes = [
       ]
     },
     { path: 'reportespanel', component: PanelreportesComponent , data :  { titulo: 'Perfil'} },
+    { path: 'reporte', component: ReportesComponent , data :  { titulo: 'Perfil'} },
+    { path: 'reporte/:id', component: ReportesComponent , data :  { titulo: 'Perfil'} },
 
       { path: 'estilo', component: AccoutSettingsComponent, data :  { titulo: 'Configuracion'} },
       { path: 'perfil', component: PerfilComponent, data :  { titulo: 'Perfil'} },
       { path: 'clientes',  component: ClientesComponent, data :  { titulo: 'Clientes'}},
+      { path: 'clientes/:id',  component: ClientesComponent, data :  { titulo: 'Clientes'}},
+
       { path: 'nuevo',     component: ClienteNuevoComponent, data :  { titulo: 'Clientes'}},
       { path: 'usuarios', component: UsuariosComponent, data :  { titulo: 'usuarios'} },
+      { path: 'usuarios/:id', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
+      { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
+
 
       { path: 'promesas', component: PromesasComponent, data :  { titulo: 'Panel administrativo'} },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }

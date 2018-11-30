@@ -12,7 +12,6 @@ import { DocumentacionComponent } from './pages/documentacion/documentacion.comp
 import {BrowserModule} from '@angular/platform-browser';
 // temporal
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {  } from './components/encuesta/encuesta.component';
 // Servicios
 import { ServiceModule } from './services/service.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

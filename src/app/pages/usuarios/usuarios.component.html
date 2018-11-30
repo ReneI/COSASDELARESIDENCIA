@@ -71,18 +71,20 @@
                                             </select>
 
                                 </td>
-                                <label *ngIf="usuario.rol" class="label label-danger">{{usuario.rol}}</label>
-                            </td>
-                            <td>
-                                <a href="">ver info</a>
-                                <button (click)="guardarUsuario( usuario )" class="btn btn-primary">
-                                <i class="fa fa-save"></i>
-                              </button>
+                                <td>
 
-                                <button (click)="borrar( usuario )" class="btn btn-danger">
+                                    <label *ngIf="usuario.rol" class="label label-danger">{{usuario.rol}}</label>
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/usuarios',usuario.id]" [queryParams]="{debug: true}">ver info</a>
+                                    <!-- <button (click)="guardarUsuario( usuario )" class="btn btn-primary"> 
+                                    <i class="fa fa-save"></i>
+                                  </button> -->
+
+                                    <button (click)="borrar( usuario )" class="btn btn-danger">
                                   <i class="fa fa-trash-o"></i>
                                 </button>
-                            </td>
+                                </td>
                         </tr>
 
                     </tbody>

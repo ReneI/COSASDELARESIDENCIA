@@ -1,3 +1,4 @@
+import { EncuestaModule } from './../components/encuesta-editor/encuesta.module';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { CommonModule } from '@angular/common';
 import {LOCALE_ID, NgModule} from '@angular/core';
@@ -13,7 +14,6 @@ import {IncrementadorComponent} from '../components/incrementador/incrementador.
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
-import { SurveyEditorComponent } from '../components/encuesta-editor/encuesta-editor.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ReportesComponent } from './reportes/reportes.component';
@@ -32,11 +32,11 @@ import { DataTableComponent } from '../data-table/data-table.component';
 import {DemoMaterialModule} from './materia.module';
 import {MatNativeDateModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarioComponent } from '../components/calendario/calendario.component';
-
+// import { CalendarioComponent } from '../components/calendario/calendario.component';
 /* panel de reportes
+
  */
-import {CalendarDateFormatter, CalendarModule, DateAdapter, MOMENT, CalendarMomentDateFormatter } from 'angular-calendar';
+ import {CalendarDateFormatter, CalendarModule, DateAdapter, MOMENT, CalendarMomentDateFormatter } from 'angular-calendar';
 import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
 import { registerLocaleData } from '@angular/common';
 import moment from 'moment-timezone';
@@ -45,6 +45,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/moment';
 // imagen de perfil
 import {PipesModule} from '../pipes/pipes.module';
 import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
+import { DemoUtilsModule } from '../components/calendario/module';
 
 
 export function momentAdapterFactory() {
@@ -60,7 +61,6 @@ export function momentAdapterFactory() {
     IncrementadorComponent,
     GraficoDonaComponent,
     AccoutSettingsComponent,
-    SurveyEditorComponent,
     PromesasComponent,
     EncuestasComponent,
     ReportesComponent,
@@ -74,7 +74,6 @@ export function momentAdapterFactory() {
     DataTableComponent,
     UsuariosComponent,
     PanelreportesComponent,
-    CalendarioComponent,
     UsuariodetalleComponent
 
 
@@ -84,7 +83,11 @@ export function momentAdapterFactory() {
     ProgressComponent,
     Graficas1Component
   ],
-  imports: [CommonModule,
+  imports: [
+    EncuestaModule,
+    CommonModule,
+    DemoUtilsModule,
+
     MatNativeDateModule,
     ShareModule,
     APP_ROUTES,
@@ -115,9 +118,8 @@ CalendarModule.forRoot(
     {
       provide: MOMENT,
       useValue: moment
-    },
-    { provide: LOCALE_ID, useValue: 'es-MX' }
-  ]
+    }
+    ]
 
 })
 export class PagesModule {}

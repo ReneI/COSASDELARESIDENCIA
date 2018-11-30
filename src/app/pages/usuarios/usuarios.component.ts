@@ -32,8 +32,8 @@ this.cargarusuarios();
                 this.cargando = false;
       console.log(res);
       this.usuarios = res;
-      this.totalRegistros= res.length;
-
+/*       this.totalRegistros= res.length;
+ */
       });
 
     }

@@ -1,3 +1,78 @@
-<p>
-  usuariodetalle works!
-</p>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h4 class="card-title">Perfil del usuario</h4>
+            <h6 class="card-subtitle"> nombre usuario </h6>
+
+            <form #f="ngForm" (ngSubmit)="guardar( f.value )" class="form p-t-20">
+                <div class="form-group">
+                    <label for="exampleInputuname">Nombre de usuario</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="ti-user"></i></div>
+                        <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de usuario" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Correo de usuario</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="ti-email"></i></div>
+                        <input [ngModel]="usuario.email" name="email" type="email" class="form-control" placeholder="Correo del usuario" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                  <i class="fa fa-save"></i>
+                  Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Información de la empresa</h3>
+            <p class="text-muted m-b-30 font-13"> Use Bootstrap's predefined grid classes for horizontal form </p>
+            <div class="form-horizontal">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Curp*</label>
+                    <div class="col-sm-9">
+                        <input [ngModel]="usuario.curp" name="curp" type="text" class="form-control" id="inputEmail3" placeholder="curp">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Curp*</label>
+                    <div class="col-sm-9">
+                        <input [ngModel]="usuario.rfc" name="rfc" type="text" class="form-control" id="inputEmail3" placeholder="curp">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Puesto</label>
+                    <div class="col-sm-9">
+                        <input [ngModel]="usuario.puesto" name="puesto" type="text" class="form-control" id="inputEmail3" placeholder="Puesto">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 text-right control-label col-form-label">Departamento</label>
+                    <div class="col-sm-9">
+                        <input [ngModel]="usuario.departamento" type="email" class="form-control" id="inputEmail3" placeholder="departamento">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="offset-sm-3 col-sm-9">
+                        <div class="checkbox checkbox-success">
+                            <input [ngModel]="usuario.horario" type="text" class="form-control" id="inputEmail3" placeholder="horario">
+                            <label for="checkbox33">horario</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="offset-sm-3 col-sm-9">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

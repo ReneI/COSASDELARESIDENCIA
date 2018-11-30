@@ -15,8 +15,15 @@ export class UsuariodetalleComponent implements OnInit {
    }
 
   ngOnInit() {
+    const queryParams = this._route.snapshot.queryParams;
+    const routeParams = this._route.snapshot.params;
+
+    /* 
+
     let id = +this._route.snapshot.params['id'];
-    this.obtenerusuario(id);
+    this.obtenerusuario(id); */
+
+    console.log(queryParams);
   }
 
   obtenerusuario(id){
