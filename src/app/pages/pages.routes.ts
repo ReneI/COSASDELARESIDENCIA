@@ -50,7 +50,7 @@ const pagesroutes: Routes = [
       { path: 'usuarios/:id', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
       { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
       { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
-      { path: 'encuestas/repuestas', component: ListadorespuestasComponent , data :  { titulo: 'usuarios'} },
+      { path: 'encuestas/repuestas', component: ListadorespuestasComponent , data :  { titulo: 'Respuesta de los encuestados'} },
 
 
       { path: 'promesas', component: PromesasComponent, data :  { titulo: 'Panel administrativo'} },

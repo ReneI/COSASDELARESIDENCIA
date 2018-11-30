@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TodoService {
 
-  api_url = 'http://localhost:3000';
-  todoUrl = `${this.api_url}/api/todos`;
+  api_url = 'https://saci2o.herokuapp.com';
+  todoUrl = `${this.api_url}/api/notas`;
 
   constructor(
     private http: HttpClient

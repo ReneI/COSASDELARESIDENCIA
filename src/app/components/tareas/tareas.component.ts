@@ -31,7 +31,11 @@ export class TareaComponent implements OnInit {
         console.log(todos );
       });
   }
-
+  submitTodo(event, todo:ToDo){
+    if(event.keyCode ==13){
+      this.editTodo(todo)
+    }
+}
   create() {
     this.todoService.createTodo(this.newTodo)
       .subscribe((res) => {

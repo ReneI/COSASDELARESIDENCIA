@@ -1,10 +1,10 @@
-<app-survey-editor [json]="json" (surveySaved)="onSurveySaved($event)"></app-survey-editor>
+<!-- <app-survey-editor [json]="json" (surveySaved)="onSurveySaved($event)"></app-survey-editor> -->
 <div class="row">
     <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h1> Crea y distribuyes los cuestionarios </h1>
-                <a class="btn btn-block btn-lg btn-success" href="">Crear</a>
+                <a class="btn btn-block btn-lg btn-success" [routerLink]="['/encuestas/repuestas']">Ver respuestas</a>
 
                 <a class="btn btn-block btn-lg btn-success" href="">Distribuir</a>
             </div>
