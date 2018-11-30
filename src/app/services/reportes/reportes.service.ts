@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map } from 'rxjs/operators';
 import {Observable} from 'rxjs';
+
 import { URL_RAIZ} from '../../config/config';
 import { usuario } from '../../models/usuarios.model';
 import {isNullOrUndefined} from 'util';
@@ -17,6 +18,10 @@ import {SubirArchivosService} from '../archivos/subir-archivos.service';
 })
 export class ReportesService {
 
+  headers: HttpHeaders =  new HttpHeaders({
+    "Content-Type" : "application/json"
+
+  });
 
 
   constructor(public usuarioservice: AuthService, public http: HttpClient, public _subirArchivoService: SubirArchivosService) {
@@ -26,8 +31,17 @@ export class ReportesService {
 }
 
 
+registrar(Usuario){
 
+const  url = `${URL_RAIZ}/api/api/reportesSemana`;
+return this.http.post(url, Usuario, {headers: this.headers}).map( ma => {
+   console.log(ma);
+   return ma;
 
+});
+}
+
+}
 
 
 /* 
@@ -38,6 +52,3 @@ registrarreporte(fecha){
   })
   }
  */
-
-}
-

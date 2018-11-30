@@ -9,3 +9,4 @@ export  { AuthGuardService } from './auth/authguard.service';
 export { NavbarService } from './shared/navbar.service';
 export {ClientesService}  from './clientes/clientes.service';
 export { SubirArchivosService } from './archivos/subir-archivos.service';
+export { TodoService } from './tareas/todo.service';

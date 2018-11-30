@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import swal from 'sweetalert2';
+
 import {AuthService, NavbarService} from '../../services/service.index';
 
 @Component({
@@ -17,6 +19,10 @@ export class HeaderComponent implements OnInit {
     this.checkuser();
     this.Usuario = this.login.getUser();
       
+  }
+
+  buscar( termino: string ) {
+    this.router.navigate(['/busqueda', termino ]);
   }
   salir() {
   console.log('saliendo');

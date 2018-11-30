@@ -46,6 +46,11 @@ import { adapterFactory } from 'angular-calendar/date-adapters/moment';
 import {PipesModule} from '../pipes/pipes.module';
 import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
 import { DemoUtilsModule } from '../components/calendario/module';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+
+// tareas
+import { TareaComponent } from '../components/tareas/tareas.component';
+import { ListadorespuestasComponent } from './encuestas/listadorespuestas.component';
 
 
 export function momentAdapterFactory() {
@@ -60,6 +65,8 @@ export function momentAdapterFactory() {
     Graficas1Component,
     IncrementadorComponent,
     GraficoDonaComponent,
+    TareaComponent,
+
     AccoutSettingsComponent,
     PromesasComponent,
     EncuestasComponent,
@@ -74,7 +81,9 @@ export function momentAdapterFactory() {
     DataTableComponent,
     UsuariosComponent,
     PanelreportesComponent,
-    UsuariodetalleComponent
+    UsuariodetalleComponent,
+    BusquedaComponent,
+    ListadorespuestasComponent
 
 
   ],

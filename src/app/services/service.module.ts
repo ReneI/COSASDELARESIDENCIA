@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SettingsService, SharedService, SidebarService, MensajesService, NavbarService} from './service.index';
+import {SettingsService, SharedService, SidebarService, MensajesService, NavbarService, TodoService} from './service.index';
 import { ActivatedRoute} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -20,7 +20,8 @@ import {UsuarioService} from '../components/usuario/usuario.service';
     SidebarService,
     MensajesService,
     UsuarioService,
-    NavbarService
+    NavbarService,
+    TodoService
   ]
 })
 export class ServiceModule {

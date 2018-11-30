@@ -1,6 +1,15 @@
-export interface Notas  {
-   id?: string;
-  usuario?: string;
-  titulo?: string;
-   mensaje?: string;
+export class ToDo {
+   _id: string;
+   title: string;
+   description: string;
+   date: Date;
+   status: string;
+
+constructor (
+   ) {
+       this.title = '';
+       this.description = '';
+       this.date = new Date();
+       this.status = '';
+}
 }

@@ -15,6 +15,8 @@ import { GuardGuard } from '../services/guard/guard.guard';
 import { PanelreportesComponent } from './reportes/panelreportes/panelreportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
+import { ListadorespuestasComponent } from './encuestas/listadorespuestas.component';
+
 
 const pagesroutes: Routes = [
   {
@@ -47,6 +49,8 @@ const pagesroutes: Routes = [
       { path: 'usuarios', component: UsuariosComponent, data :  { titulo: 'usuarios'} },
       { path: 'usuarios/:id', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
       { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
+      { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
+      { path: 'encuestas/repuestas', component: ListadorespuestasComponent , data :  { titulo: 'usuarios'} },
 
 
       { path: 'promesas', component: PromesasComponent, data :  { titulo: 'Panel administrativo'} },

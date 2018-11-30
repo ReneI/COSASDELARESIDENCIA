@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportesService } from '../../services/reportes/reportes.service';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Clientes} from '../../models/clientes.model';
+
+import { SwalPartialTargets } from '@toverux/ngx-sweetalert2';
+import swal from 'sweetalert2';
+
 // import AWS = require('aws-sdk');
 
 
@@ -9,10 +16,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportesComponent implements OnInit {
 
-  constructor() { }
+
+  forma : FormGroup;
+  constructor(public _reporte: ReportesService) { }
+
+
 
   ngOnInit() {
+    this.forma = new FormGroup({
+      descripcion: new FormControl(null, Validators.required),
+      adjuntos: new FormControl(null, [Validators.required, Validators.email]),
+    }, {});
   }
+
+
+
+
+registrar(Datos){
+  if (this.forma.invalid) {
+    swal(
+      'Registro Fallido !',
+      'Favor de completar los campos restantes',
+      'error'
+    );
+  }
+  if(this.forma.valid) {
+     // console.log(this.forma.value);
+     let user = new Clientes( this.forma.value.nombre, 
+      this.forma.value.empresa, this.forma.value.posicion, 
+      this.forma.value.correo, this.forma.value.telefono,this.forma.value.celular, this.forma.value.direccion );
+     console.log(user);
+     this._reporte.registrar(Datos).subscribe( ee => {
+      console.log('registrado en subscribe', ee);
+       swal(
+         'Registro existoso!',
+         'Cliente Registrado con exito',
+         'success'
+       );
+       this.forma.reset();
+       },        error => {
+         console.log(error);
+  
+       swal(
+         'error del sistema!',
+         'Contacte al administrador...!',
+         'error'
+       );
+     }
+   );
+
+}
+
+
+
+
 /* 
   fileEvent(fileInput: any) {
     const AWSService = AWS;
@@ -44,4 +101,5 @@ export class ReportesComponent implements OnInit {
    });
   } */
 
+}
 }
