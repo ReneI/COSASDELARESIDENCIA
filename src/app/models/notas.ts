@@ -1,15 +1,15 @@
 export class ToDo {
-   _id: string;
-   title: string;
-   description: string;
-   date: Date;
-   status: string;
+   id: string;
+   titulo: string;
+   descripcion: string;
+   fecha: Date;
+   estado: string;
 
 constructor (
    ) {
-       this.title = '';
-       this.description = '';
-       this.date = new Date();
-       this.status = '';
+       this.titulo = '';
+       this.descripcion = '';
+       this.fecha = new Date();
+       this.estado = 'incompleto';
 }
 }

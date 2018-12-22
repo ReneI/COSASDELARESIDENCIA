@@ -1,9 +1,10 @@
 
 import { ToDo } from '../../models/notas';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import { URL_RAIZ} from '../../config/config';
 
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import {Response} from '@angular/http';
 import { Injectable } from '@angular/core';
 @Injectable()
@@ -16,23 +17,31 @@ export class TodoService {
     private http: HttpClient
   ) { }
 
+  headers: HttpHeaders =  new HttpHeaders({
+    "Content-Type" : "application/json"
+
+  });
+
   createTodo(todo: ToDo): Observable<any>{
-    //returns the observable of http post request 
-    return this.http.post(`${this.todoUrl}`, todo);
+    console.log(this.todoUrl);
+    return this.http.post(this.todoUrl, todo,  {headers: this.headers});
 }
   
   //Read todo, takes no arguments
   getToDos(): Observable<ToDo[]>{
+  
     return this.http.get(this.todoUrl)
     .map(res  => {
       //Maps the response object sent from the server
         
-      return res["data"].docs as ToDo[];
+      return res as ToDo[];
     })
   }
   //Update todo, takes a ToDo Object as parameter
   editTodo(todo:ToDo){
+  
     let editUrl = `${this.todoUrl}`
+    console.log(editUrl);
     //returns the observable of http put request 
     return this.http.put(editUrl, todo);
   }
@@ -40,6 +49,7 @@ export class TodoService {
   deleteTodo(id:string):any{
     //Delete the object by the id
     let deleteUrl = `${this.todoUrl}/${id}`
+    console.log(deleteUrl);
     return this.http.delete(deleteUrl)
     .map(res  => {
       return res;

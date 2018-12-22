@@ -48,8 +48,6 @@ const pagesroutes: Routes = [
       { path: 'nuevo',     component: ClienteNuevoComponent, data :  { titulo: 'Clientes'}},
       { path: 'usuarios', component: UsuariosComponent, data :  { titulo: 'usuarios'} },
       { path: 'usuarios/:id', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
-      { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
-      { path: 'usuarios:id/editar', component: UsuariodetalleComponent, data :  { titulo: 'usuarios'} },
       { path: 'encuestas/repuestas', component: ListadorespuestasComponent , data :  { titulo: 'Respuesta de los encuestados'} },
 
 

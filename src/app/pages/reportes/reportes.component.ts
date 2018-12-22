@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ReportesService } from '../../services/reportes/reportes.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Clientes} from '../../models/clientes.model';
+import '@ckeditor/ckeditor5-build-classic/build/translations/es';
+
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { SwalPartialTargets } from '@toverux/ngx-sweetalert2';
 import swal from 'sweetalert2';
@@ -18,13 +21,30 @@ export class ReportesComponent implements OnInit {
 
 
   forma : FormGroup;
+  public Editor = ClassicEditor;
+
   constructor(public _reporte: ReportesService) { }
 
+  public model = {
+    editorData: '<p>Hello, world!</p>'
+};
+
+  public onReady( editor ) {
+      editor.ui.view.editable.element.parentElement.insertBefore(
+          editor.ui.view.toolbar.element,
+          editor.ui.view.editable.element
+      );  
+  }
+  public config = {
+    language: 'es'
+};
 
 
   ngOnInit() {
     this.forma = new FormGroup({
       descripcion: new FormControl(null, Validators.required),
+      informacion: new FormControl(null, Validators.required),
+
       adjuntos: new FormControl(null, [Validators.required, Validators.email]),
     }, {});
   }

@@ -91,3 +91,7 @@
     color: #fff;
     transition: background 0.5s ease;
 }
+
+.ck-editor__editable {
+    min-height: 900px;
+}

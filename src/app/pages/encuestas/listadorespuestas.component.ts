@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-listadorespuestas',
@@ -11,7 +12,7 @@ export class ListadorespuestasComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/* 
 
   var surveyJSONFromDB = {
 
@@ -70,5 +71,5 @@ var json = JSON.parse(surveyJSONFromDB);
 var survey = new Survey.Model(json);
 survey.mode = 'display';
 survey.render("surveyElement");
-
+ */
 }

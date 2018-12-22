@@ -8,8 +8,10 @@ import {ProgressComponent} from './progress/progress.component';
 import {Graficas1Component} from './graficas1/graficas1.component';
 import {APP_ROUTES} from '../app.routes';
 import { ShareModule } from '../shared/share.module';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 import {PAGES_ROUTE} from './pages.routes';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import {IncrementadorComponent} from '../components/incrementador/incrementador.component';
 import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
@@ -47,6 +49,7 @@ import {PipesModule} from '../pipes/pipes.module';
 import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
 import { DemoUtilsModule } from '../components/calendario/module';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { FormsModule } from '@angular/forms';
 
 // tareas
 import { TareaComponent } from '../components/tareas/tareas.component';
@@ -96,7 +99,7 @@ export function momentAdapterFactory() {
     EncuestaModule,
     CommonModule,
     DemoUtilsModule,
-
+    CKEditorModule,
     MatNativeDateModule,
     ShareModule,
     APP_ROUTES,

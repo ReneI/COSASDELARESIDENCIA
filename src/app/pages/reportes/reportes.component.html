@@ -44,30 +44,19 @@
                         <form NgNativeValidate [formGroup]="forma" (ngSubmit)="guardar()" class="form-horizontal form-material">
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">descripcion corta</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="descripcion">
+                                <input formControlName="descripcion" type="text" class="form-control" id="exampleInputEmail1" placeholder="descripcion">
                                 <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
 
 
-                            <!--    <div class="form-group">
-                                <label for="exampleSelect2">Example multiple select</label>
-                                <select multiple class="form-control" id="exampleSelect2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                              </select>
-                            </div> -->
+
                             <div class="form-group">
-                                <label for="exampleTextarea"> Realice alguna descripcion breve</label>
-                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+
+
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Archivo a subir</label>
-
-                                <label for="imageUpload">Image Upload</label>
+                                <ckeditor formControlName="informacion" [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
                                 <input type="file" (change)="fileEvent($event)" name="imageUpload" id="imageUpload" />
                                 <small id="fileHelp" class="form-text text-muted">Subir archivos</small>
                             </div>

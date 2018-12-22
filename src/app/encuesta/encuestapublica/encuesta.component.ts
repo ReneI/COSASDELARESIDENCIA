@@ -8,18 +8,20 @@ import {Router} from '@angular/router';
 })
 export class EncuestaPublicaComponent implements OnInit {
   
-  name = 'SurveyJS and Angular 5';
+  name = 'Encuesta con angular 5';
 
   hola(){
   
 }
-  constructor(private router: Router) {     console.log('paginaencuesta');
+  constructor(private router: Router) {
+    
+    console.log('paginaencuesta');
 }
 
   ngOnInit() {
   }
 
-  title = "app works!";
+  title = "encuesta ";
 
  json2 = {
     locale: "es",
