@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
+import {Encuesta} from '../../services/encuesta/encuesta.service';
+import { EncuestaModel} from '../../models/encuesta.model';
 @Component({
   selector: 'app-encuesta',
   templateUrl: './encuesta.component.html',
@@ -13,7 +14,7 @@ export class EncuestaPublicaComponent implements OnInit {
   hola(){
   
 }
-  constructor(private router: Router) {
+  constructor(private encuesta: Encuesta, private router: Router) {
     
     console.log('paginaencuesta');
 }
@@ -21,87 +22,326 @@ export class EncuestaPublicaComponent implements OnInit {
   ngOnInit() {
   }
 
-  title = "encuesta ";
 
- json2 = {
-    locale: "es",
-    pages: [
+  guardar(encuesta) {
+    let enc = new EncuestaModel( encuesta);
+   console.log(enc);
+   this.encuesta.registrar(enc).subscribe();
+
+}
+
+
+  title = "encuesta ";
+json3={
+  locale: "es",
+  pages: [
+   {
+    name: "page1",
+    elements: [
      {
-      name: "page1",
-      elements: [
+      type: "text",
+      name: "question1",
+      title: {
+       es: "Nombre de su negocio"
+      },
+      isRequired: true
+     },
+     {
+      type: "radiogroup",
+      name: "question2",
+      renderAs: "prettycheckbox",
+
+      title: {
+       es: "Como conocio nuestra empresa"
+      },
+      isRequired: true,
+      choices: [
        {
-        type: "radiogroup",
-        name: "question6",
-        choices: [
-         "item1",
-         "item2",
-         "item3"
-        ]
+        value: "item1",
+        text: {
+         es: "Recomendacion"
+        }
        },
        {
-        type: "rating",
-        name: "question1",
-        title: "Como fue el trato del personal que lo atendió?",
-        isRequired: true
+        value: "item2",
+        text: {
+         es: "publicidad"
+        }
        },
        {
-        type: "comment",
-        name: "question3",
-        title: "¿Porque?"
+        value: "item3",
+        text: {
+         es: "Por medio de protección civil  Municipal"
+        }
+       },
+       {
+        value: "item4",
+        text: {
+         es: "Por medio de protección civil  Estatal"
+        }
+       },
+       {
+        value: "item5",
+        text: {
+         es: "Otro"
+        }
        }
       ]
      },
      {
-      name: "page2",
-      elements: [
+      type: "radiogroup",
+      name: "question3",
+      renderAs: "prettycheckbox",
+      "colCount": 4,
+
+
+      title: {
+       es: "Para qué utiliza los Servicios de Asesoria y Consultoria Industrial "
+      },
+      isRequired: true,
+      choices: [
        {
-        type: "panel",
-        name: "panel1",
-        elements: [
-         {
-          type: "radiogroup",
-          name: "question4",
-          startWithNewLine: false,
-          title: "Las visitas durante el proceso, por parte del personal de SACI fiueron en tiempo y forma",
-          isRequired: true,
-          choices: [
-           {
-            value: "item1",
-            text: "Si"
-           },
-           {
-            value: "item2",
-            text: "No"
-           }
-          ],
-          choicesOrder: "desc"
-         },
-         {
-          type: "comment",
-          name: "question5",
-          title: "¿Porque?"
-         }
-        ],
-        title: "Evaluation del Servicio "
+        value: "item1",
+        text: {
+         es: "Para solucionar problemas legales"
+        }
+       },
+       {
+        value: "item2",
+        text: {
+         es: "Cumplir con la normatividad que corresponde"
+        }
+       },
+       {
+        value: "item3",
+        text: {
+         es: "Introducir mejoras a la empresa"
+        }
        }
       ]
+     },
+     {
+      type: "rating",
+      name: "question4",
+      title: {
+       es: "Como fue el trato del personal que lo atendió?"
+      },
+      isRequired: true,
+      minRateDescription: {
+       es: "Malo"
+      },
+      maxRateDescription: {
+       es: "Excelente"
+      }
+     },
+     {
+      type: "comment",
+      name: "question5",
+      visibleIf: "{question4} < 4",
+      title: {
+       es: "Porqué "
+      }
      }
-    ],
-    maxTimeToFinish: -1
-   }
+    ]
+   },
+   {
+    name: "page2",
+    elements: [
+     {
+      type: "radiogroup",
+      name: "question6",
+      renderAs: "prettycheckbox",
 
-  
-  json = {
-    title: "Product Feedback Survey Example",
+      title: {
+       es: "Las visitas durante el proceso, por parte del personal de saci, fueron en tiempo y forma"
+      },
+      isRequired: true,
+      choices: [
+       {
+        value: "item1",
+        text: {
+         es: "Si"
+        }
+       },
+       {
+        value: "item2",
+        text: {
+         es: "No"
+        }
+       }
+      ]
+     },
+     {
+      type: "comment",
+      name: "question7",
+      title: {
+       es: "Porqué "
+      }
+     },
+     {
+      type: "radiogroup",
+      name: "question8",
+      renderAs: "prettycheckbox",
+
+      title: {
+       es: "Se realizó una inspección de sus instalaciones de forma adecuada"
+      },
+      isRequired: true,
+      choices: [
+       {
+        value: "item1",
+        text: {
+         es: "Si"
+        }
+       },
+       {
+        value: "item2",
+        text: {
+         es: "No"
+        }
+       }
+      ]
+     },
+     {
+      type: "comment",
+      name: "question9",
+      visibleIf: "{question8} = \"item2\"",
+      title: {
+       es: "Porqué "
+      }
+     }
+    ]
+   },
+   {
+    name: "page3",
+    elements: [
+     {
+      type: "rating",
+      name: "question10",
+      title: {
+       es: "Cual es su opinión de las capacitaciones impartidas?"
+      },
+      isRequired: true,
+      minRateDescription: {
+       es: "No fueron de mi agrado"
+      },
+      maxRateDescription: {
+       es: "Excelentes "
+      }
+     },
+     {
+      type: "rating",
+      name: "question11",
+      title: {
+       es: "Fue de su agrado el soporte documental entregado, del servicio contratado"
+      },
+      isRequired: true,
+      minRateDescription: {
+       es: "Mal trabajo"
+      },
+      maxRateDescription: {
+       es: "Excelente trabajo"
+      }
+     },
+     {
+      type: "radiogroup",
+      name: "question12",
+      renderAs: "prettycheckbox",
+
+      title: {
+       es: "Usted recomendaría los servicios de nuestra empresa"
+      },
+      isRequired: true,
+      choices: [
+       {
+        value: "item1",
+        text: {
+         es: "Si"
+        }
+       },
+       {
+        value: "item2",
+        text: {
+         es: "No"
+        }
+       }
+      ]
+     },
+     {
+      type: "comment",
+      name: "question13",
+      visibleIf: "{question12} = [\"item2\"]",
+      title: {
+       es: "Porqué "
+      }
+     }
+    ]
+   },
+   {
+    name: "page4",
+    elements: [
+     {
+      type: "radiogroup",
+      renderAs: "prettycheckbox",
+
+      name: "question14",
+      title: {
+       es: "Contrataria de nuevo nuestros servicios"
+      },
+      isRequired: true,
+      choices: [
+       {
+        value: "item1",
+        text: {
+         es: "Si"
+        }
+       },
+       {
+        value: "item2",
+        text: {
+         es: "No"
+        }
+       }
+      ]
+     },
+     {
+      type: "comment",
+      name: "question15",
+      visibleIf: "{question12} = [\"item2\"]",
+      title: {
+       es: "Porqué "
+      }
+     },
+     {
+      type: "comment",
+      name: "question16",
+      title: {
+       es: "Sugerencias"
+      }
+     }
+    ]
+   }
+  ]
+ ,    completedHtml: "<p><h4>Gracias</h4></p><p>Por favor visitenos nuevamente</p>"
+
+}
+   json4 = {
+    locale:"es",
+    title: "SACI",
     showProgressBar: "top",
     pages: [
       {
         elements: [
           {
             type: "text",
-            inputMask: "phone",
-            popupdescription: "Some text"
+            name: "p1",
+            title: "Nombre de su negocio"
           },
+          { type: "radiogroup",
+          name: "p2",
+          renderAs: "prettycheckbox",
+          choices: ["Recomendacion", "Publicidad", "Por medio de protección civil  Municipal", "Por medio de protección civil  Estatal"]
+        },
           {
             type: "barrating",
             name: "barrating",
@@ -225,7 +465,7 @@ export class EncuestaPublicaComponent implements OnInit {
         questions: [
           {
             type: "radiogroup",
-            name: "price to competitors",
+            name: "price",
             title: "Compared to our competitors, do you feel the Product is",
             choices: [
               "Less expensive",
@@ -273,5 +513,6 @@ export class EncuestaPublicaComponent implements OnInit {
       }
     ]
   };
+  
 
 }

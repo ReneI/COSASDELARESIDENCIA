@@ -28,7 +28,7 @@ const pagesroutes: Routes = [
       { path: 'graficas1', component: Graficas1Component, data :  { titulo: 'Panel administrativo'} },
       { path: 'manual',  component: DocumentacionComponent, data :  { titulo: 'Manual de Uso'} },
       {path: 'reportes', component: PanelreportesComponent, data :  { titulo: 'Reportes'}},
-      { path: 'encuestas',  component: EncuestasComponent, data :  { titulo: 'Panel administrativo'} },
+      { path: 'encuestas',  component: EncuestasComponent, data :  { titulo: 'Encuestas'} },
       { path: 'encuesta/:id', component: EncuestasComponent,
       children: [
       { path: '', redirectTo: 'encuestas', pathMatch: 'full' },

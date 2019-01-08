@@ -153,7 +153,7 @@ console.log(url);
   
   buscarporid(buscar) {
     // api/empleados?filter=%7B%22skip%22%3A%224%22%7D
-    const  url = `${URL_RAIZ}/api/empleados?filter={"where":{"id": "${buscar}"}}`;
+    const  url = `${URL_RAIZ}/api/empleados/${buscar}`;
    console.log(url);
     return this.http.get( url ).map((res) => res);
 

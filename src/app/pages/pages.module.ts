@@ -86,7 +86,7 @@ export function momentAdapterFactory() {
     PanelreportesComponent,
     UsuariodetalleComponent,
     BusquedaComponent,
-    ListadorespuestasComponent
+    ListadorespuestasComponent,
 
 
   ],

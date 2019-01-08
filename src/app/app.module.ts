@@ -23,7 +23,7 @@ import { EncuestaModule } from './components/encuesta-editor/encuesta.module';
     LoginComponent,
     RegisterComponent,
     DocumentacionComponent,
-    EncuestaPublicaComponent
+    EncuestaPublicaComponent,
   ],
   imports: [ SweetAlert2Module.forRoot({
     buttonsStyling: false,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Encuesta} from '../../services/encuesta/encuesta.service';
 @Component({
   selector: 'app-encuestas',
   templateUrl: './encuestas.component.html',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncuestasComponent implements OnInit {
 /*   node_modules/jquery/dist/jquery.min.js
- */  constructor() { }
+ */  constructor(public encuesta: Encuesta) { }
+
+
+
+
   graficos: any = {
     'grafico1': {
       'labels': ['Con Frijoles', 'Con Natilla', 'Con tocino'],

@@ -22,7 +22,7 @@ import {UsuarioService} from '../components/usuario/usuario.service';
     UsuarioService,
     NavbarService,
     TodoService
-  ]
+    ]
 })
 export class ServiceModule {
 

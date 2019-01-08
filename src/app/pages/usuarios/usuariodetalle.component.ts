@@ -84,6 +84,8 @@ cambiarImagen() {
     this.usuario = arg;
     console.log(this.usuario);
 
-   }}
+   });
+  
+  }
 
 }

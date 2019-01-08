@@ -1,0 +1,349 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>adminpro documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">adminpro documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>NopagefoundComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/nopagefound/nopagefound.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-nopagefound</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./nopagefound.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/nopagefound/nopagefound.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/nopagefound/nopagefound.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-nopagefound&#x27;,
+  templateUrl: &#x27;./nopagefound.component.html&#x27;,
+  styles: []
+})
+export class NopagefoundComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;svg width&#x3D;&quot;380px&quot; height&#x3D;&quot;500px&quot; viewBox&#x3D;&quot;0 0 837 1045&quot; version&#x3D;&quot;1.1&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot; xmlns:sketch&#x3D;&quot;http://www.bohemiancoding.com/sketch/ns&quot;&gt;
+  &lt;g id&#x3D;&quot;Page-1&quot; stroke&#x3D;&quot;none&quot; stroke-width&#x3D;&quot;1&quot; fill&#x3D;&quot;none&quot; fill-rule&#x3D;&quot;evenodd&quot; sketch:type&#x3D;&quot;MSPage&quot;&gt;
+    &lt;path d&#x3D;&quot;M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z&quot; id&#x3D;&quot;Polygon-1&quot; stroke&#x3D;&quot;#007FB2&quot; stroke-width&#x3D;&quot;6&quot; sketch:type&#x3D;&quot;MSShapeGroup&quot;&gt;&lt;/path&gt;
+    &lt;path d&#x3D;&quot;M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z&quot; id&#x3D;&quot;Polygon-2&quot; stroke&#x3D;&quot;#EF4A5B&quot; stroke-width&#x3D;&quot;6&quot; sketch:type&#x3D;&quot;MSShapeGroup&quot;&gt;&lt;/path&gt;
+    &lt;path d&#x3D;&quot;M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z&quot; id&#x3D;&quot;Polygon-3&quot; stroke&#x3D;&quot;#795D9C&quot; stroke-width&#x3D;&quot;6&quot; sketch:type&#x3D;&quot;MSShapeGroup&quot;&gt;&lt;/path&gt;
+    &lt;path d&#x3D;&quot;M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z&quot; id&#x3D;&quot;Polygon-4&quot; stroke&#x3D;&quot;#F2773F&quot; stroke-width&#x3D;&quot;6&quot; sketch:type&#x3D;&quot;MSShapeGroup&quot;&gt;&lt;/path&gt;
+    &lt;path d&#x3D;&quot;M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z&quot; id&#x3D;&quot;Polygon-5&quot; stroke&#x3D;&quot;#36B455&quot; stroke-width&#x3D;&quot;6&quot; sketch:type&#x3D;&quot;MSShapeGroup&quot;&gt;&lt;/path&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+&lt;div class&#x3D;&quot;message-box&quot;&gt;
+  &lt;h1&gt;404&lt;/h1&gt;
+  &lt;p&gt;Page not found&lt;/p&gt;
+  &lt;div class&#x3D;&quot;buttons-con&quot;&gt;
+    &lt;div class&#x3D;&quot;action-link-wrap&quot;&gt;
+      &lt;a onclick&#x3D;&quot;history.back(-1)&quot; class&#x3D;&quot;link-button link-back-button&quot;&gt;Regresar&lt;/a&gt;
+      &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;link-button&quot;&gt;Regresar a la pagina de inicio&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">    <path d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z" id="Polygon-1" stroke="#007FB2" stroke-width="6" sketch:type="MSShapeGroup"></path>    <path d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z" id="Polygon-2" stroke="#EF4A5B" stroke-width="6" sketch:type="MSShapeGroup"></path>    <path d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z" id="Polygon-3" stroke="#795D9C" stroke-width="6" sketch:type="MSShapeGroup"></path>    <path d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z" id="Polygon-4" stroke="#F2773F" stroke-width="6" sketch:type="MSShapeGroup"></path>    <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z" id="Polygon-5" stroke="#36B455" stroke-width="6" sketch:type="MSShapeGroup"></path>  </g></svg><div class="message-box">  <h1>404</h1>  <p>Page not found</p>  <div class="buttons-con">    <div class="action-link-wrap">      <a onclick="history.back(-1)" class="link-button link-back-button">Regresar</a>      <a href="" class="link-button">Regresar a la pagina de inicio</a>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AccoutSettingsComponent', 'selector': 'app-accout-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbsComponent', 'selector': 'app-breadcrumbs'},{'name': 'BusquedaComponent', 'selector': 'app-busqueda'},{'name': 'CalendarHeaderComponent', 'selector': 'mwl-demo-utils-calendar-header'},{'name': 'ClienteNuevoComponent', 'selector': 'app-nuevo'},{'name': 'ClientesComponent', 'selector': 'app-clientes'},{'name': 'ClienteseComponent', 'selector': 'app-clientese'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DataTableComponent', 'selector': 'data-table'},{'name': 'DetalleComponent', 'selector': 'app-detalle'},{'name': 'DocumentacionComponent', 'selector': 'app-documentacion'},{'name': 'EncuestaComponent', 'selector': 'app-survey'},{'name': 'EncuestaPublicaComponent', 'selector': 'app-encuesta'},{'name': 'EncuestasComponent', 'selector': 'app-encuestas'},{'name': 'Graficas1Component', 'selector': 'app-graficas1'},{'name': 'GraficoDonaComponent', 'selector': 'app-grafico-dona'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'IncrementadorComponent', 'selector': 'app-incrementador'},{'name': 'ListadorespuestasComponent', 'selector': 'app-listadorespuestas'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NopagefoundComponent', 'selector': 'app-nopagefound'},{'name': 'NotaComponent', 'selector': 'app-nota'},{'name': 'NotasFormsComponent', 'selector': 'app-notas-forms'},{'name': 'PagesComponent', 'selector': 'app-pages'},{'name': 'PanelreportesComponent', 'selector': 'mwl-demo-component'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'ProgressComponent', 'selector': 'app-progress'},{'name': 'PromesasComponent', 'selector': 'app-promesas'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReportesComponent', 'selector': 'app-reportes'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SurveyEditorComponent', 'selector': 'app-survey-editor'},{'name': 'TareaComponent', 'selector': 'app-tarea'},{'name': 'UsuariodetalleComponent', 'selector': 'app-usuariodetalle'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'},{'name': 'VerComponent', 'selector': 'app-ver'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NopagefoundComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NopagefoundComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
